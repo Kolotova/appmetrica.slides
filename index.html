@@ -129,6 +129,7 @@
       .slide-meta { align-items: flex-start; flex-wrap: wrap; }
       .open-link { width: 100%; }
       .frame-shell { border-radius: 12px; }
+      iframe { background: #000; }
     }
   </style>
 </head>
@@ -421,15 +422,61 @@
       </section>
   </main>
   <script>
+    const MOBILE_MEDIA = window.matchMedia('(max-width: 860px)');
+
     const setFrameHeight = (iframe) => {
       const declaredHeight = Number(iframe.dataset.height || 1600);
-      iframe.style.height = `${declaredHeight}px`;
-      iframe.closest('.frame-shell')?.style.setProperty('--frame-height', `${declaredHeight}px`);
+      const shell = iframe.closest('.frame-shell');
+
+      if (!MOBILE_MEDIA.matches) {
+        try {
+          const doc = iframe.contentDocument;
+          const body = doc?.body;
+          if (body) {
+            body.style.transform = '';
+            body.style.transformOrigin = '';
+            body.style.width = '';
+          }
+        } catch (_) {}
+
+        iframe.style.height = `${declaredHeight}px`;
+        shell?.style.setProperty('--frame-height', `${declaredHeight}px`);
+        return;
+      }
+
+      let nextHeight = declaredHeight;
+      try {
+        const doc = iframe.contentDocument;
+        const root = doc?.documentElement;
+        const body = doc?.body;
+        if (root && body && shell) {
+          const naturalWidth = Math.max(root.scrollWidth, body.scrollWidth, 1);
+          const naturalHeight = Math.max(root.scrollHeight, body.scrollHeight, declaredHeight);
+          const viewportWidth = shell.clientWidth || naturalWidth;
+          const scale = Math.min(1, viewportWidth / naturalWidth);
+          body.style.transformOrigin = 'top left';
+          body.style.transform = `scale(${scale})`;
+          body.style.width = `${naturalWidth}px`;
+          nextHeight = Math.ceil(naturalHeight * scale);
+        }
+      } catch (_) {}
+
+      iframe.style.height = `${nextHeight}px`;
+      shell?.style.setProperty('--frame-height', `${nextHeight}px`);
     };
 
-    document.querySelectorAll('iframe').forEach((iframe) => {
+    const frames = document.querySelectorAll('iframe');
+    frames.forEach((iframe) => {
       setFrameHeight(iframe);
       iframe.addEventListener('load', () => setFrameHeight(iframe));
+    });
+
+    window.addEventListener('resize', () => {
+      frames.forEach((iframe) => setFrameHeight(iframe));
+    });
+
+    MOBILE_MEDIA.addEventListener('change', () => {
+      frames.forEach((iframe) => setFrameHeight(iframe));
     });
   </script>
 
