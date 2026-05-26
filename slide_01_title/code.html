@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AppMetrica - конкурентный анализ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0E121A;
+            color: #e1e2eb;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .perspective-lg {
+            perspective: 2000px;
+        }
+        .card-3d-blue {
+            transform: rotateY(-15deg) rotateX(10deg) translateZ(0);
+            background: linear-gradient(135deg, #4D88F7 0%, #1d1f26 100%);
+            box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .card-3d-pink {
+            transform: rotateY(-15deg) rotateX(10deg) translateZ(50px) translateX(40px) translateY(-20px);
+            background: linear-gradient(135deg, #ffb0c9 0%, #c2006a 100%);
+            box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .card-3d-purple {
+            transform: rotateY(-15deg) rotateX(10deg) translateZ(100px) translateX(80px) translateY(-40px);
+            background: linear-gradient(135deg, #a078ff 0%, #340080 100%);
+            box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .glass-overlay {
+            background: rgba(25, 30, 40, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(48, 56, 73, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#1d1f26",
+                      "surface-container-low": "#191b22",
+                      "on-tertiary": "#3c0091",
+                      "background": "#11131a",
+                      "on-error": "#690005",
+                      "tertiary-container": "#a078ff",
+                      "surface-bright": "#373940",
+                      "on-tertiary-container": "#340080",
+                      "on-tertiary-fixed-variant": "#5600ca",
+                      "tertiary-fixed-dim": "#d0bcff",
+                      "on-surface-variant": "#c2c6d5",
+                      "on-primary-container": "#00275f",
+                      "inverse-on-surface": "#2e3037",
+                      "secondary-container": "#c2006a",
+                      "primary-fixed-dim": "#afc6ff",
+                      "tertiary-fixed": "#e9ddff",
+                      "surface-container-highest": "#32353c",
+                      "surface-container-lowest": "#0c0e14",
+                      "secondary-fixed-dim": "#ffb0c9",
+                      "on-primary-fixed-variant": "#004398",
+                      "surface-variant": "#32353c",
+                      "surface-dim": "#11131a",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#8e004c",
+                      "inverse-primary": "#0059c6",
+                      "inverse-surface": "#e1e2eb",
+                      "surface-tint": "#afc6ff",
+                      "on-surface": "#e1e2eb",
+                      "error-container": "#93000a",
+                      "primary-container": "#538dfd",
+                      "secondary": "#ffb0c9",
+                      "outline": "#8c909f",
+                      "primary-fixed": "#d9e2ff",
+                      "on-background": "#e1e2eb",
+                      "on-primary-fixed": "#001a43",
+                      "secondary-fixed": "#ffd9e3",
+                      "on-tertiary-fixed": "#23005c",
+                      "surface": "#11131a",
+                      "tertiary": "#d0bcff",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#002d6c",
+                      "surface-container-high": "#272a31",
+                      "on-secondary-container": "#ffd6e0",
+                      "outline-variant": "#424753",
+                      "primary": "#afc6ff",
+                      "on-secondary": "#650034",
+                      "on-secondary-fixed": "#3e001e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-lg": "32px",
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "64px",
+                      "container-max": "1440px",
+                      "stack-xl": "64px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "number-lg": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<nav class="bg-background dark:bg-background flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto z-50">
+<div class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface">AppMetrica</div>
+
+</nav>
+<!-- Hero Content -->
+<main class="flex-grow flex items-center w-full px-margin-desktop max-w-container-max mx-auto relative overflow-visible">
+<div class="grid grid-cols-12 gap-gutter w-full py-stack-xl items-center">
+<!-- Left Side: Content -->
+<div class="col-span-12 md:col-span-7 flex flex-col gap-stack-lg z-10">
+<div class="flex flex-col gap-stack-sm">
+
+<h1 class="text-white font-display-xl text-display-xl leading-tight">
+                        AppMetrica на рынке mobile analytics и attribution
+                    </h1>
+</div>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-xl">
+                    Конкурентная карта, отличия продукта и метрики роста сервиса.
+                </p>
+
+</div>
+<!-- Right Side: 3D Visualization -->
+<div class="hidden md:col-span-5 md:flex items-center justify-center relative perspective-lg py-stack-xl">
+<div class="relative w-full h-[400px] flex items-center justify-center">
+<!-- Base Shadow/Atmosphere -->
+<div class="absolute w-[150%] h-[150%] bg-gradient-radial from-primary/10 to-transparent blur-3xl -z-10"></div>
+<!-- Decorative Geometric Elements -->
+<div class="absolute -top-10 -right-10 w-32 h-32 border border-outline-variant opacity-20 rounded-full animate-pulse"></div>
+<div class="absolute -bottom-20 left-0 w-64 h-64 border border-primary/20 opacity-10 rounded-full"></div>
+<!-- 3D Overlapping Cards -->
+<div class="relative w-64 h-80">
+<!-- Blue Card -->
+<div class="absolute inset-0 card-3d-blue rounded-[32px] p-8 flex flex-col justify-end border border-white/10">
+<div class="w-12 h-12 rounded-full bg-white/20 mb-4 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white">analytics</span>
+</div>
+<div class="h-2 w-16 bg-white/40 rounded-full mb-2"></div>
+<div class="h-2 w-24 bg-white/20 rounded-full"></div>
+</div>
+<!-- Pink Card -->
+<div class="absolute inset-0 card-3d-pink rounded-[32px] p-8 flex flex-col justify-end border border-white/10">
+<div class="w-12 h-12 rounded-full bg-white/20 mb-4 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white">insights</span>
+</div>
+<div class="h-2 w-16 bg-white/40 rounded-full mb-2"></div>
+<div class="h-2 w-24 bg-white/20 rounded-full"></div>
+</div>
+<!-- Purple Card -->
+<div class="absolute inset-0 card-3d-purple rounded-[32px] p-8 flex flex-col justify-end border border-white/10">
+<div class="w-12 h-12 rounded-full bg-white/20 mb-4 backdrop-blur-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-white">data_thresholding</span>
+</div>
+<div class="h-2 w-16 bg-white/40 rounded-full mb-2"></div>
+<div class="h-2 w-24 bg-white/20 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Abstract Gradient Blobs for Cinematic Atmosphere -->
+<div class="fixed top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-20"></div>
+<div class="fixed bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[600px] h-[600px] bg-secondary-container/5 rounded-full blur-[100px] pointer-events-none -z-20"></div>
+
+<script>
+        // Simple micro-interaction for the cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.card-3d-blue, .card-3d-pink, .card-3d-purple');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            cards.forEach((card, index) => {
+                const depth = (index + 1) * 5;
+                card.style.transform = `rotateY(${xAxis + (-15)}deg) rotateX(${yAxis + 10}deg) translateZ(${index * 50}px) translateX(${index * 40}px) translateY(${-index * 20}px)`;
+            });
+        });
+    </script>
+</body></html>

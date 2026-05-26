@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#ffd6e0",
+                        "tertiary-container": "#a078ff",
+                        "surface-bright": "#373940",
+                        "surface-variant": "#32353c",
+                        "surface": "#11131a",
+                        "primary-container": "#538dfd",
+                        "on-secondary-fixed": "#3e001e",
+                        "inverse-primary": "#0059c6",
+                        "surface-container-highest": "#32353c",
+                        "on-tertiary-fixed": "#23005c",
+                        "surface-dim": "#11131a",
+                        "surface-container-lowest": "#0c0e14",
+                        "on-error": "#690005",
+                        "secondary": "#ffb0c9",
+                        "on-primary-fixed": "#001a43",
+                        "inverse-surface": "#e1e2eb",
+                        "background": "#11131a",
+                        "primary": "#afc6ff",
+                        "inverse-on-surface": "#2e3037",
+                        "on-primary": "#002d6c",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c2c6d5",
+                        "on-tertiary-fixed-variant": "#5600ca",
+                        "outline": "#8c909f",
+                        "surface-container-high": "#272a31",
+                        "tertiary-fixed": "#e9ddff",
+                        "surface-container": "#1d1f26",
+                        "on-primary-fixed-variant": "#004398",
+                        "on-surface": "#e1e2eb",
+                        "surface-container-low": "#191b22",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "on-secondary": "#650034",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e1e2eb",
+                        "tertiary": "#d0bcff",
+                        "primary-fixed": "#d9e2ff",
+                        "on-primary-container": "#00275f",
+                        "secondary-fixed-dim": "#ffb0c9",
+                        "outline-variant": "#424753",
+                        "secondary-container": "#c2006a",
+                        "on-tertiary-container": "#340080",
+                        "secondary-fixed": "#ffd9e3",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-secondary-fixed-variant": "#8e004c",
+                        "surface-tint": "#afc6ff",
+                        "on-tertiary": "#3c0091"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px",
+                        "stack-xl": "64px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "number-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0E121A;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .timeline-track {
+            background: linear-gradient(90deg, rgba(77,136,247,0.1) 0%, rgba(77,136,247,0.4) 50%, rgba(160,120,255,0.4) 100%);
+        }
+        .glass-card {
+            background: #191E28;
+            border: 1px solid #303849;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #4D88F7;
+            transform: translateY(-4px);
+            background: #202635;
+        }
+        .active-gradient {
+            background: linear-gradient(135deg, #4D88F7 0%, #a078ff 100%);
+        }
+    </style>
+<style id="telegram-cleanup-style">
+body{background:#11131a!important;color:#e1e2eb!important;font-family:Inter,Arial,sans-serif!important}
+header,body>nav,footer{display:none!important}
+main{padding-top:64px!important}
+.deck-eyebrow{display:inline-flex!important;align-items:center!important;width:max-content!important;padding:4px 16px!important;border-radius:9999px!important;background:rgba(83,141,253,.10)!important;border:1px solid rgba(83,141,253,.20)!important;color:#afc6ff!important;font-family:Inter,sans-serif!important;font-size:14px!important;line-height:20px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:16px!important}
+[class*="tracking"]{letter-spacing:0!important}
+.no-ai-garbage{display:none!important}
+</style>
+<style id="slide20-layout-fix">
+main{padding-top:48px!important;padding-bottom:48px!important}
+section.mb-stack-xl{margin-bottom:40px!important}
+.roadmap-wrap{padding-top:24px!important;padding-bottom:28px!important}
+.roadmap-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}
+.roadmap-step{min-width:0!important;height:100%!important;gap:20px!important}
+.roadmap-step>div:first-child{margin-bottom:10px!important;gap:10px!important}
+.roadmap-card{min-width:0!important;min-height:248px!important;padding:24px!important;border-radius:28px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important}
+.roadmap-card h3{font-size:22px!important;line-height:28px!important;font-weight:800!important;letter-spacing:0!important;margin-bottom:18px!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important;hyphens:none!important}
+.roadmap-card ul{font-size:16px!important;line-height:23px!important;display:grid!important;gap:9px!important;margin:0!important;padding:0!important}
+.roadmap-card li{list-style:none!important;position:relative!important;padding-left:14px!important;margin:0!important;color:#c2c6d5!important;white-space:normal!important;overflow-wrap:break-word!important}
+.roadmap-card li::before{content:"";position:absolute;left:0;top:.72em;width:4px;height:4px;border-radius:50%;background:#c2c6d5}
+.timeline-track{top:142px!important}
+@media(max-width:1200px){.roadmap-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.timeline-track{display:none!important}.roadmap-card{min-height:210px!important}}
+</style></head>
+<body class="dark bg-surface text-on-surface">
+<!-- TopNavBar from JSON -->
+<main class="pt-[100px] pb-stack-xl px-margin-desktop max-w-container-max mx-auto min-h-screen">
+<section class="mb-stack-xl">
+<span class="deck-eyebrow">План</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm">План: от знания к подключению</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Ведем adoption-кампанию: сначала объясняем ценность, затем доводим до действия.</p>
+</section>
+<!-- Header Section -->
+<!-- 8-Week Roadmap Canvas -->
+<div class="relative py-stack-xl">
+<!-- Timeline Line -->
+<div class="absolute top-[160px] left-0 w-full h-[2px] timeline-track opacity-30"></div>
+<!-- Steps Grid -->
+<div class="grid grid-cols-1 md:grid-cols-6 gap-gutter relative z-10 roadmap-grid">
+<!-- Step 1 -->
+<div class="flex flex-col gap-stack-lg roadmap-step">
+<div class="flex flex-col items-center gap-stack-md mb-stack-md">
+<div class="w-12 h-12 rounded-full active-gradient flex items-center justify-center text-on-primary-container font-bold text-headline-md shadow-lg shadow-primary/20">1</div>
+<span class="text-primary font-bold text-label-md">Неделя 1</span>
+</div>
+<div class="glass-card p-stack-lg rounded-[32px] flex-1 roadmap-card">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-on-surface">Диагностика</h3>
+<ul class="text-on-surface-variant font-body-md text-body-md space-y-2">
+<li>Сегменты</li>
+<li>База</li>
+<li>Воронка</li>
+</ul>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col gap-stack-lg roadmap-step">
+<div class="flex flex-col items-center gap-stack-md mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface font-bold text-headline-md">2</div>
+<span class="text-on-surface-variant font-bold text-label-md">Недели 1-2</span>
+</div>
+<div class="glass-card p-stack-lg rounded-[32px] flex-1 roadmap-card">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-on-surface">Упаковка<br/>ценности</h3>
+<ul class="text-on-surface-variant font-body-md text-body-md space-y-2">
+<li>Сообщения</li>
+<li>FAQ</li>
+<li>Гайд</li>
+</ul>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col gap-stack-lg roadmap-step">
+<div class="flex flex-col items-center gap-stack-md mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface font-bold text-headline-md">3</div>
+<span class="text-on-surface-variant font-bold text-label-md">Недели 2-4</span>
+</div>
+<div class="glass-card p-stack-lg rounded-[32px] flex-1 roadmap-card">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-on-surface">CRM<br/>кампания</h3>
+<ul class="text-on-surface-variant font-body-md text-body-md space-y-2">
+<li>Awareness</li>
+<li>Сценарии</li>
+<li>CTA</li>
+</ul>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col gap-stack-lg roadmap-step">
+<div class="flex flex-col items-center gap-stack-md mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface font-bold text-headline-md">4</div>
+<span class="text-on-surface-variant font-bold text-label-md">Недели 3-6</span>
+</div>
+<div class="glass-card p-stack-lg rounded-[32px] flex-1 roadmap-card">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-on-surface">Owned<br/>размещения</h3>
+<ul class="text-on-surface-variant font-body-md text-body-md space-y-2">
+<li>Сообщества</li>
+<li>Справка</li>
+<li>Обучение</li>
+</ul>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col gap-stack-lg roadmap-step">
+<div class="flex flex-col items-center gap-stack-md mb-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center text-on-surface font-bold text-headline-md">5</div>
+<span class="text-on-surface-variant font-bold text-label-md">Недели 3-6</span>
+</div>
+<div class="glass-card p-stack-lg rounded-[32px] flex-1 roadmap-card">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-on-surface">Поддержка<br/>и менеджеры</h3>
+<ul class="text-on-surface-variant font-body-md text-body-md space-y-2">
+<li>Скрипты</li>
+<li>Менеджеры</li>
+<li>Партнеры</li>
+</ul>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col gap-stack-lg roadmap-step">
+<div class="flex flex-col items-center gap-stack-md mb-stack-md">
+<div class="w-12 h-12 rounded-full active-gradient border border-outline-variant flex items-center justify-center text-on-primary font-bold text-headline-md">6</div>
+<span class="text-primary font-bold text-label-md">Недели 5-8</span>
+</div>
+<div class="glass-card p-stack-lg rounded-[32px] flex-1 roadmap-card">
+<h3 class="font-headline-md text-headline-md mb-stack-sm text-on-surface">Оптимизация</h3>
+<ul class="text-on-surface-variant font-body-md text-body-md space-y-2">
+<li>Лучшие сегменты</li>
+<li>Темы и CTA</li>
+<li>Итоги</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- CRM Sequence Chips Section -->
+<section class="mt-stack-xl">
+<h4 class="font-label-md text-label-md text-on-surface-variant mb-stack-md uppercase tracking-wider">CRM-цепочка</h4>
+<div class="flex flex-wrap gap-stack-md">
+<div class="px-stack-lg py-stack-md rounded-full bg-surface-container-high border border-outline-variant hover:border-primary cursor-default transition-colors group max-w-full">
+<span class="text-on-surface group-hover:text-primary font-body-md text-body-md">Не пропускайте события, которые могут остановить рекламу.</span>
+</div>
+<div class="px-stack-lg py-stack-md rounded-full bg-surface-container-high border border-outline-variant hover:border-primary cursor-default transition-colors group max-w-full">
+<span class="text-on-surface group-hover:text-primary font-body-md text-body-md">Какие уведомления удобно получать в Telegram.</span>
+</div>
+<div class="px-stack-lg py-stack-md rounded-full bg-surface-container-high border border-outline-variant hover:border-primary cursor-default transition-colors group max-w-full">
+<span class="text-on-surface group-hover:text-primary font-body-md text-body-md">Telegram помогает быстрее реагировать по нескольким кампаниям.</span>
+</div>
+<div class="px-stack-lg py-stack-md rounded-full active-gradient border border-transparent shadow-lg shadow-primary/20 cursor-default max-w-full">
+<span class="text-on-primary font-bold font-body-md text-body-md">Подключите Telegram для важных уведомлений из Директа.</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<script>
+        // Subtle micro-interaction for the timeline steps
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const stepCircle = card.parentElement.querySelector('.w-12');
+                if (stepCircle && !stepCircle.classList.contains('active-gradient')) {
+                    stepCircle.classList.add('border-primary', 'text-primary');
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const stepCircle = card.parentElement.querySelector('.w-12');
+                if (stepCircle && !stepCircle.classList.contains('active-gradient')) {
+                    stepCircle.classList.remove('border-primary', 'text-primary');
+                }
+            });
+        });
+    </script>
+</body></html>

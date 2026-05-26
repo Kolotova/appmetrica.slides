@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AppMetrica + Direct deck - единый просмотр</title>
+  <style>
+    :root {
+      --bg: #0E121A;
+      --surface: #171b24;
+      --surface-2: #1d1f26;
+      --text: #f4f5f8;
+      --muted: #aeb5c6;
+      --line: rgba(174, 181, 198, 0.22);
+      --blue: #538dfd;
+      --pink: #ec2f86;
+      --purple: #7b35f2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 18px 28px;
+      background: rgba(14, 18, 26, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; flex-direction: column; gap: 4px; }
+    .brand strong { font-size: 18px; line-height: 1.2; }
+    .brand span { color: var(--muted); font-size: 13px; }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      max-width: 1080px;
+    }
+    .nav a {
+      display: inline-grid;
+      place-items: center;
+      min-width: 36px;
+      height: 32px;
+      padding: 0 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(29, 31, 38, 0.72);
+    }
+    .nav a:hover { border-color: var(--blue); background: rgba(83, 141, 253, 0.18); }
+    main {
+      width: min(1568px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 32px 0 64px;
+    }
+    .slide-block {
+      scroll-margin-top: 132px;
+      margin: 0 0 48px;
+    }
+    .slide-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 14px;
+      min-height: 36px;
+    }
+    .slide-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 46px;
+      height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--blue), var(--pink) 52%, var(--purple));
+    }
+    h2 {
+      margin: 0;
+      flex: 1;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    .open-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      border-bottom: 1px solid transparent;
+    }
+    .open-link:hover { color: var(--text); border-bottom-color: var(--text); }
+    .frame-shell {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      height: var(--frame-height, 1600px);
+      border: 0;
+      background: var(--bg);
+    }
+    @media (max-width: 860px) {
+      .topbar { grid-template-columns: 1fr; padding: 16px; }
+      .nav { justify-content: flex-start; max-width: none; }
+      main { width: min(100% - 24px, 1568px); padding-top: 24px; }
+      .slide-block { scroll-margin-top: 190px; margin-bottom: 32px; }
+      .slide-meta { align-items: flex-start; flex-wrap: wrap; }
+      .open-link { width: 100%; }
+      .frame-shell { border-radius: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <strong>Тестовое задание: AppMetrica и Direct</strong>
+      <span>Единый вертикальный просмотр HTML-слайдов</span>
+    </div>
+    <nav class="nav" aria-label="Навигация по слайдам">
+      <a href="#slide-01" title="Титульный слайд">01</a>
+<a href="#slide-02" title="Рамка рынка">02</a>
+<a href="#slide-03" title="Целевая аудитория">03</a>
+<a href="#slide-04" title="Выбор конкурентов">04</a>
+<a href="#slide-05" title="Доказательность выбора">05</a>
+<a href="#slide-06" title="Методология оценки">06</a>
+<a href="#slide-07" title="Конкурентная карта">07</a>
+<a href="#slide-08" title="Преимущества">08</a>
+<a href="#slide-09" title="Ограничения">09</a>
+<a href="#slide-10" title="Позиционирование">10</a>
+<a href="#slide-11" title="Дерево метрик">11</a>
+<a href="#slide-12" title="Фокусная метрика A2V30">12</a>
+<a href="#slide-13" title="Рост A2V30">13</a>
+<a href="#slide-14" title="Инициативы на 90 дней">14</a>
+<a href="#slide-15" title="Финальный вывод">15</a>
+<a href="#slide-16" title="Рост Telegram adoption">16</a>
+<a href="#slide-17" title="Рамка задачи Telegram">17</a>
+<a href="#slide-18" title="Сегменты и ценность">18</a>
+<a href="#slide-19" title="Owned-каналы">19</a>
+<a href="#slide-20" title="План запуска">20</a>
+<a href="#slide-21" title="KPI и эксперименты">21</a>
+<a href="#slide-A1" title="Источники и методология">A1</a>
+<a href="#slide-A2" title="Расшифровка метрик">A2</a>
+    </nav>
+  </header>
+  <main>
+
+      <section class="slide-block" id="slide-01">
+        <div class="slide-meta">
+          <span class="slide-number">01</span>
+          <h2>Титульный слайд</h2>
+          <a class="open-link" href="slide_01_title/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="980" src="slide_01_title/code.html" title="01. Титульный слайд" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-02">
+        <div class="slide-meta">
+          <span class="slide-number">02</span>
+          <h2>Рамка рынка</h2>
+          <a class="open-link" href="slide_02_market_framework/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1120" src="slide_02_market_framework/code.html" title="02. Рамка рынка" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-03">
+        <div class="slide-meta">
+          <span class="slide-number">03</span>
+          <h2>Целевая аудитория</h2>
+          <a class="open-link" href="slide_03_target_audience/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1900" src="slide_03_target_audience/code.html" title="03. Целевая аудитория" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-04">
+        <div class="slide-meta">
+          <span class="slide-number">04</span>
+          <h2>Выбор конкурентов</h2>
+          <a class="open-link" href="slide_04_selected_competitors/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1280" src="slide_04_selected_competitors/code.html" title="04. Выбор конкурентов" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-05">
+        <div class="slide-meta">
+          <span class="slide-number">05</span>
+          <h2>Доказательность выбора</h2>
+          <a class="open-link" href="slide_05_evidence_of_choice/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="2050" src="slide_05_evidence_of_choice/code.html" title="05. Доказательность выбора" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-06">
+        <div class="slide-meta">
+          <span class="slide-number">06</span>
+          <h2>Методология оценки</h2>
+          <a class="open-link" href="slide_06_scorecard_methodology/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1680" src="slide_06_scorecard_methodology/code.html" title="06. Методология оценки" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-07">
+        <div class="slide-meta">
+          <span class="slide-number">07</span>
+          <h2>Конкурентная карта</h2>
+          <a class="open-link" href="slide_07_competitive_map/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1720" src="slide_07_competitive_map/code.html" title="07. Конкурентная карта" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-08">
+        <div class="slide-meta">
+          <span class="slide-number">08</span>
+          <h2>Преимущества</h2>
+          <a class="open-link" href="slide_08_advantages/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1720" src="slide_08_advantages/code.html" title="08. Преимущества" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-09">
+        <div class="slide-meta">
+          <span class="slide-number">09</span>
+          <h2>Ограничения</h2>
+          <a class="open-link" href="slide_09_limitations/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1320" src="slide_09_limitations/code.html" title="09. Ограничения" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-10">
+        <div class="slide-meta">
+          <span class="slide-number">10</span>
+          <h2>Позиционирование</h2>
+          <a class="open-link" href="slide_10_segment_positioning/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1360" src="slide_10_segment_positioning/code.html" title="10. Позиционирование" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-11">
+        <div class="slide-meta">
+          <span class="slide-number">11</span>
+          <h2>Дерево метрик</h2>
+          <a class="open-link" href="slide_11_metrics_tree/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1380" src="slide_11_metrics_tree/code.html" title="11. Дерево метрик" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-12">
+        <div class="slide-meta">
+          <span class="slide-number">12</span>
+          <h2>Фокусная метрика A2V30</h2>
+          <a class="open-link" href="slide_12_focal_metric_a2v30/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1660" src="slide_12_focal_metric_a2v30/code.html" title="12. Фокусная метрика A2V30" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-13">
+        <div class="slide-meta">
+          <span class="slide-number">13</span>
+          <h2>Рост A2V30</h2>
+          <a class="open-link" href="slide_13_a2v30_growth_path/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1420" src="slide_13_a2v30_growth_path/code.html" title="13. Рост A2V30" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-14">
+        <div class="slide-meta">
+          <span class="slide-number">14</span>
+          <h2>Инициативы на 90 дней</h2>
+          <a class="open-link" href="slide_14_90_day_initiatives/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="2120" src="slide_14_90_day_initiatives/code.html" title="14. Инициативы на 90 дней" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-15">
+        <div class="slide-meta">
+          <span class="slide-number">15</span>
+          <h2>Финальный вывод</h2>
+          <a class="open-link" href="slide_15_final_conclusion/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="980" src="slide_15_final_conclusion/code.html" title="15. Финальный вывод" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+
+      <section class="slide-block" id="slide-16">
+        <div class="slide-meta">
+          <span class="slide-number">16</span>
+          <h2>Рост Telegram adoption</h2>
+          <a class="open-link" href="slide_16_direct_telegram_divider/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="920" src="slide_16_direct_telegram_divider/code.html" title="16. Рост Telegram adoption" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-17">
+        <div class="slide-meta">
+          <span class="slide-number">17</span>
+          <h2>Рамка задачи Telegram</h2>
+          <a class="open-link" href="slide_17_telegram_problem_frame/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1180" src="slide_17_telegram_problem_frame/code.html" title="17. Рамка задачи Telegram" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-18">
+        <div class="slide-meta">
+          <span class="slide-number">18</span>
+          <h2>Сегменты и ценность</h2>
+          <a class="open-link" href="slide_18_telegram_segments_value/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1320" src="slide_18_telegram_segments_value/code.html" title="18. Сегменты и ценность" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-19">
+        <div class="slide-meta">
+          <span class="slide-number">19</span>
+          <h2>Owned-каналы</h2>
+          <a class="open-link" href="slide_19_telegram_owned_channels/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1320" src="slide_19_telegram_owned_channels/code.html" title="19. Owned-каналы" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-20">
+        <div class="slide-meta">
+          <span class="slide-number">20</span>
+          <h2>План запуска</h2>
+          <a class="open-link" href="slide_20_telegram_8_week_plan/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1420" src="slide_20_telegram_8_week_plan/code.html" title="20. План запуска" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-21">
+        <div class="slide-meta">
+          <span class="slide-number">21</span>
+          <h2>KPI и эксперименты</h2>
+          <a class="open-link" href="slide_21_telegram_kpi_experiments/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1320" src="slide_21_telegram_kpi_experiments/code.html" title="21. KPI и эксперименты" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-A1">
+        <div class="slide-meta">
+          <span class="slide-number">A1</span>
+          <h2>Источники и методология</h2>
+          <a class="open-link" href="appendix_01_sources_methodology/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="1520" src="appendix_01_sources_methodology/code.html" title="A1. Источники и методология" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+
+      <section class="slide-block" id="slide-A2">
+        <div class="slide-meta">
+          <span class="slide-number">A2</span>
+          <h2>Расшифровка метрик</h2>
+          <a class="open-link" href="appendix_02_metric_definitions/code.html">Открыть отдельно</a>
+        </div>
+        <div class="frame-shell">
+          <iframe data-height="2350" src="appendix_02_metric_definitions/code.html" title="A2. Расшифровка метрик" loading="lazy" scrolling="no"></iframe>
+        </div>
+      </section>
+  </main>
+  <script>
+    const setFrameHeight = (iframe) => {
+      const declaredHeight = Number(iframe.dataset.height || 1600);
+      iframe.style.height = `${declaredHeight}px`;
+      iframe.closest('.frame-shell')?.style.setProperty('--frame-height', `${declaredHeight}px`);
+    };
+
+    document.querySelectorAll('iframe').forEach((iframe) => {
+      setFrameHeight(iframe);
+      iframe.addEventListener('load', () => setFrameHeight(iframe));
+    });
+  </script>
+
+</body>
+</html>

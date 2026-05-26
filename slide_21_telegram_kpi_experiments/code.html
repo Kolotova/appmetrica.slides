@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KPI &amp; Experiments</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#ffd6e0",
+            "tertiary-container": "#a078ff",
+            "surface-bright": "#373940",
+            "surface-variant": "#32353c",
+            "surface": "#0E121A",
+            "primary-container": "#538dfd",
+            "on-secondary-fixed": "#3e001e",
+            "inverse-primary": "#0059c6",
+            "surface-container-highest": "#32353c",
+            "on-tertiary-fixed": "#23005c",
+            "surface-dim": "#11131a",
+            "surface-container-lowest": "#0c0e14",
+            "on-error": "#690005",
+            "secondary": "#ffb0c9",
+            "on-primary-fixed": "#001a43",
+            "inverse-surface": "#e1e2eb",
+            "background": "#0E121A",
+            "primary": "#afc6ff",
+            "inverse-on-surface": "#2e3037",
+            "on-primary": "#002d6c",
+            "error-container": "#93000a",
+            "on-surface-variant": "#c2c6d5",
+            "on-tertiary-fixed-variant": "#5600ca",
+            "outline": "#8c909f",
+            "surface-container-high": "#272a31",
+            "tertiary-fixed": "#e9ddff",
+            "surface-container": "#1d1f26",
+            "on-primary-fixed-variant": "#004398",
+            "on-surface": "#e1e2eb",
+            "surface-container-low": "#191b22",
+            "tertiary-fixed-dim": "#d0bcff",
+            "on-secondary": "#650034",
+            "error": "#ffb4ab",
+            "on-error-container": "#ffdad6",
+            "on-background": "#e1e2eb",
+            "tertiary": "#d0bcff",
+            "primary-fixed": "#d9e2ff",
+            "on-primary-container": "#00275f",
+            "secondary-fixed-dim": "#ffb0c9",
+            "outline-variant": "#303849",
+            "secondary-container": "#c2006a",
+            "on-tertiary-container": "#340080",
+            "secondary-fixed": "#ffd9d3",
+            "primary-fixed-dim": "#afc6ff",
+            "on-secondary-fixed-variant": "#8e004c",
+            "surface-tint": "#afc6ff",
+            "on-tertiary": "#3c0091"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "20px",
+            "stack-sm": "8px",
+            "stack-xl": "64px",
+            "gutter": "24px",
+            "container-max": "1440px",
+            "margin-desktop": "64px",
+            "stack-md": "16px",
+            "stack-lg": "32px"
+          },
+          "fontFamily": {
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "display-xl": ["Inter"],
+            "label-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "number-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .tonal-layer { background-color: #191E28; border: 1px solid #303849; }
+    .accent-gradient { background: linear-gradient(135deg, #4D88F7 0%, #a078ff 100%); }
+    .glass-effect { backdrop-filter: blur(12px); background: rgba(25, 30, 40, 0.6); }
+  </style>
+<style id="telegram-cleanup-style">
+body{background:#11131a!important;color:#e1e2eb!important;font-family:Inter,Arial,sans-serif!important}
+header,body>nav,footer{display:none!important}
+main{padding-top:64px!important}
+.deck-eyebrow{display:inline-flex!important;align-items:center!important;width:max-content!important;padding:4px 16px!important;border-radius:9999px!important;background:rgba(83,141,253,.10)!important;border:1px solid rgba(83,141,253,.20)!important;color:#afc6ff!important;font-family:Inter,sans-serif!important;font-size:14px!important;line-height:20px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:16px!important}
+[class*="tracking"]{letter-spacing:0!important}
+.no-ai-garbage{display:none!important}
+</style>
+<style id="slide21-metrics-fix">
+.metric-funnel{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}
+.metric-step{min-height:104px!important;padding:18px 14px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important}
+.metric-step .material-symbols-outlined{margin:0!important;font-size:28px!important;line-height:1!important}
+.metric-step-label{font-size:15px!important;line-height:20px!important;font-weight:700!important;letter-spacing:0!important;text-align:center!important;text-transform:none!important;color:#e1e2eb!important}
+.metric-step.is-primary .metric-step-label{color:#afc6ff!important}
+.metric-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;margin-top:18px!important}
+.metric-chip{min-height:62px!important;display:flex!important;align-items:center!important;padding:12px 16px!important;border-radius:14px!important;background:#272a31!important;color:#c2c6d5!important;font-size:16px!important;line-height:21px!important;font-weight:650!important;letter-spacing:0!important;white-space:normal!important;overflow-wrap:break-word!important}
+@media(max-width:1100px){.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.metric-funnel{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+</style><style id="slide21-six-card-metrics-fix">
+.metric-funnel{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+.metric-step{min-height:118px!important;padding:18px 14px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:10px!important;border-radius:20px!important;overflow:hidden!important}
+.metric-step .material-symbols-outlined{margin:0!important;font-size:30px!important;line-height:1!important;color:#afc6ff!important}
+.metric-step-label{font-size:17px!important;line-height:22px!important;font-weight:800!important;letter-spacing:0!important;text-align:center!important;text-transform:none!important;color:#e1e2eb!important;max-width:170px!important}
+.metric-step.is-primary .metric-step-label{color:#afc6ff!important}
+.metric-grid{display:none!important}
+@media(max-width:1100px){.metric-funnel{grid-template-columns:repeat(2,minmax(0,1fr))!important}.metric-step{min-height:108px!important}.metric-step-label{font-size:16px!important}}
+</style></head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar Navigation Shell -->
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-xl">
+<section class="mb-stack-xl">
+<span class="deck-eyebrow">Измерение</span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-sm">Как понять, что план работает</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Измеряем не только подключение, но и путь до него: охват, клики, настройки, завершение.</p>
+</section>
+<section class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-4 tonal-layer rounded-[32px] p-stack-lg relative overflow-hidden flex flex-col justify-between">
+<div>
+<span class="font-label-md text-label-md text-primary">Главный KPI</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-stack-sm mb-stack-md">Telegram adoption rate</h3>
+<div class="flex items-baseline gap-stack-sm">
+<span class="text-on-surface-variant font-display-xl opacity-55">10%</span>
+<span class="material-symbols-outlined text-primary text-headline-lg">arrow_forward</span>
+<span class="text-primary font-display-xl">30%</span>
+</div>
+</div>
+<div class="mt-stack-xl">
+<div class="w-full bg-surface-container-highest h-2 rounded-full mb-stack-sm">
+<div class="accent-gradient h-2 rounded-full" style="width: 30%"></div>
+</div>
+<p class="font-label-md text-on-surface-variant">Цель кампании: +20 п.п.</p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 tonal-layer rounded-[32px] p-stack-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-lg">Путь до подключения</h3>
+<div class="grid grid-cols-4 gap-stack-md metric-funnel"><div class="bg-surface-container-low rounded-2xl p-stack-md border border-outline-variant text-center metric-step"><span class="material-symbols-outlined text-primary text-headline-md mb-stack-sm">visibility</span><div class="metric-step-label">Охват</div></div><div class="bg-surface-container-low rounded-2xl p-stack-md border border-outline-variant text-center metric-step"><span class="material-symbols-outlined text-primary text-headline-md mb-stack-sm">ads_click</span><div class="metric-step-label">CTR</div></div><div class="bg-surface-container-low rounded-2xl p-stack-md border border-outline-variant text-center metric-step"><span class="material-symbols-outlined text-primary text-headline-md mb-stack-sm">settings</span><div class="metric-step-label">Визит в настройки</div></div><div class="bg-surface-container-low rounded-2xl p-stack-md border border-outline-variant text-center metric-step is-primary border-primary/40"><span class="material-symbols-outlined text-primary text-headline-md mb-stack-sm">check_circle</span><div class="metric-step-label">Подключение</div></div><div class="bg-surface-container-low rounded-2xl p-stack-md border border-outline-variant text-center metric-step"><span class="material-symbols-outlined text-primary text-headline-md mb-stack-sm">unsubscribe</span><div class="metric-step-label">Отписки и жалобы</div></div><div class="bg-surface-container-low rounded-2xl p-stack-md border border-outline-variant text-center metric-step"><span class="material-symbols-outlined text-primary text-headline-md mb-stack-sm">support_agent</span><div class="metric-step-label">Обращения в поддержку</div></div></div>
+
+</div>
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mt-stack-md">
+<div class="tonal-layer rounded-2xl p-stack-md border-l-4 border-primary">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Сообщение</h4>
+<p class="text-body-md text-on-surface-variant">Остановка рекламы vs бюджет и модерация vs скорость уведомлений.</p>
+</div>
+<div class="tonal-layer rounded-2xl p-stack-md border-l-4 border-secondary">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Сегмент</h4>
+<p class="text-body-md text-on-surface-variant">Новые, активные, агентства, регулярные расходы.</p>
+</div>
+<div class="tonal-layer rounded-2xl p-stack-md border-l-4 border-tertiary-container">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">CTA</h4>
+<p class="text-body-md text-on-surface-variant">Подключить Telegram vs настроить уведомления.</p>
+</div>
+<div class="tonal-layer rounded-2xl p-stack-md border-l-4 border-outline">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Момент касания</h4>
+<p class="text-body-md text-on-surface-variant">Запуск кампании, бюджет, обучение, партнерское письмо.</p>
+</div>
+</div>
+</section>
+<section class="mt-stack-xl p-stack-lg rounded-2xl bg-surface-container-high border border-outline-variant flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-primary text-headline-lg">lightbulb</span>
+<h2 class="font-headline-md text-on-surface">Telegram нужно продавать как рабочий инструмент контроля рекламы.</h2>
+</section>
+</main>
+<!-- Footer Navigation Shell -->
+<script>
+    // Subtle interactivity for experiment cards
+    document.querySelectorAll('.tonal-layer.group').forEach(card => {
+      card.addEventListener('mousedown', () => {
+        card.style.transform = 'scale(0.98)';
+      });
+      card.addEventListener('mouseup', () => {
+        card.style.transform = 'scale(1)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+</body></html>

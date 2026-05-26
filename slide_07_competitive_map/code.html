@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Конкурентная карта | AppMetrica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #11131a;
+            color: #e1e2eb;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-high {
+            background: linear-gradient(135deg, rgba(83, 141, 253, 0.15) 0%, rgba(160, 120, 255, 0.1) 100%);
+            border: 1px solid rgba(175, 198, 255, 0.3);
+            box-shadow: inset 0 0 20px rgba(77, 136, 247, 0.1);
+        }
+        .cell-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .cell-transition:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+        .glass-panel {
+            background: rgba(25, 30, 40, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid #303849;
+        }
+        .abstract-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(83, 141, 253, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(160, 120, 255, 0.05) 0%, transparent 40%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#1d1f26",
+                      "surface-container-low": "#191b22",
+                      "on-tertiary": "#3c0091",
+                      "background": "#11131a",
+                      "on-error": "#690005",
+                      "tertiary-container": "#a078ff",
+                      "surface-bright": "#373940",
+                      "on-tertiary-container": "#340080",
+                      "on-tertiary-fixed-variant": "#5600ca",
+                      "tertiary-fixed-dim": "#d0bcff",
+                      "on-surface-variant": "#c2c6d5",
+                      "on-primary-container": "#00275f",
+                      "inverse-on-surface": "#2e3037",
+                      "secondary-container": "#c2006a",
+                      "primary-fixed-dim": "#afc6ff",
+                      "tertiary-fixed": "#e9ddff",
+                      "surface-container-highest": "#32353c",
+                      "surface-container-lowest": "#0c0e14",
+                      "secondary-fixed-dim": "#ffb0c9",
+                      "on-primary-fixed-variant": "#004398",
+                      "surface-variant": "#32353c",
+                      "surface-dim": "#11131a",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#8e004c",
+                      "inverse-primary": "#0059c6",
+                      "inverse-surface": "#e1e2eb",
+                      "surface-tint": "#afc6ff",
+                      "on-surface": "#e1e2eb",
+                      "error-container": "#93000a",
+                      "primary-container": "#538dfd",
+                      "secondary": "#ffb0c9",
+                      "outline": "#8c909f",
+                      "primary-fixed": "#d9e2ff",
+                      "on-background": "#e1e2eb",
+                      "on-primary-fixed": "#001a43",
+                      "secondary-fixed": "#ffd9e3",
+                      "on-tertiary-fixed": "#23005c",
+                      "surface": "#11131a",
+                      "tertiary": "#d0bcff",
+                      "on-error-container": "#ffdad6",
+                      "on-primary": "#002d6c",
+                      "surface-container-high": "#272a31",
+                      "on-secondary-container": "#ffd6e0",
+                      "outline-variant": "#424753",
+                      "primary": "#afc6ff",
+                      "on-secondary": "#650034",
+                      "on-secondary-fixed": "#3e001e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-lg": "32px",
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "64px",
+                      "container-max": "1440px",
+                      "stack-xl": "64px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "number-lg": ["Inter"],
+                      "display-xl": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background">
+<div class="abstract-bg"></div>
+<!-- Top Navigation Header -->
+<header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface">
+                AppMetrica
+            </div>
+
+<div class="flex gap-stack-md">
+
+
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-xl">
+<!-- Hero Section / Title -->
+<div class="mb-stack-xl">
+<h1 class="text-display-lg font-display-lg text-on-surface mb-stack-sm max-w-4xl">
+                AppMetrica сильна в РФ-сценарии единого стека
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">
+                Оценка строится на SDK-используемости, интеграциях, продуктовых модулях, тарифах и BI/export возможностях. Шкала показывает fit под сценарий, а не абсолютное качество продукта.
+            </p>
+</div>
+<!-- Heatmap Table Container -->
+<div class="glass-panel rounded-[32px] overflow-hidden p-stack-lg">
+<div class="grid grid-cols-5 gap-4">
+<!-- Header Labels -->
+<div class="p-6"></div>
+<div class="p-6 text-center">
+<div class="text-label-md font-label-md text-primary uppercase tracking-widest mb-2">Основной</div>
+<div class="text-headline-md font-headline-md text-on-surface">AppMetrica</div>
+</div>
+<div class="p-6 text-center">
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest mb-2">Конкурент</div>
+<div class="text-headline-md font-headline-md text-on-surface">MyTracker</div>
+</div>
+<div class="p-6 text-center">
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest mb-2">Глобальный</div>
+<div class="text-headline-md font-headline-md text-on-surface">AppsFlyer</div>
+</div>
+<div class="p-6 text-center">
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest mb-2">Глобальный</div>
+<div class="text-headline-md font-headline-md text-on-surface">Adjust</div>
+</div>
+<!-- Row 1: РФ-контур -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">РФ-контур</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md mb-1">Высокая</span>
+<span class="text-label-md text-primary/70">РФ-контур</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md mb-1">Высокая</span>
+<span class="text-label-md text-primary/70">РФ-контур</span>
+</div>
+<div class="cell-transition bg-surface-container p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-on-surface-variant font-bold text-headline-md mb-1">Средне-высокая</span>
+<span class="text-label-md text-on-surface-variant/70">Интеграции</span>
+</div>
+<div class="cell-transition bg-surface-container p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-on-surface-variant font-bold text-headline-md mb-1">Средне-высокая</span>
+<span class="text-label-md text-on-surface-variant/70">Интеграции</span>
+</div>
+<!-- Row 2: Атрибуция -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">Атрибуция</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition bg-surface-container p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-on-surface-variant font-bold text-headline-md">Средне-высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<!-- Row 3: Продуктовая аналитика -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">Продуктовая аналитика</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<!-- Row 4: Экономика входа -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">Экономика входа</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<!-- Row 5: BI/Export -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">BI/Export</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition bg-surface-container p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-on-surface-variant font-bold text-headline-md">Средне-высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<!-- Row 6: Международный масштаб -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">Международный масштаб</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-40">
+<span class="text-on-surface-variant font-bold text-headline-md">Низко-средняя</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<!-- Row 7: Enterprise-упаковка -->
+<div class="flex items-center p-6 border-t border-outline-variant">
+<span class="text-body-md font-body-md text-on-surface font-semibold">Enterprise-упаковка</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<div class="cell-transition bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
+<span class="text-on-surface-variant font-bold text-headline-md">Средняя</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+<div class="cell-transition glow-high p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-primary font-bold text-headline-md">Высокая</span>
+</div>
+</div>
+</div>
+<!-- Insight Panel -->
+<div class="mt-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-panel p-stack-md rounded-[24px] flex gap-4 items-start">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold text-on-surface mb-1">РФ-контур</h4>
+<p class="text-label-md text-on-surface-variant">Высокие оценки AppMetrica и MyTracker в РФ-контуре опираются на локальные каналы, RuStore/CPA-сценарии и низкий барьер запуска.</p>
+</div>
+</div>
+<div class="glass-panel p-stack-md rounded-[24px] flex gap-4 items-start">
+<div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">analytics</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold text-on-surface mb-1">Единый стек</h4>
+<p class="text-label-md text-on-surface-variant">Product analytics у MyTracker, AppsFlyer и Adjust оценен ниже, потому что их основной выбор чаще связан с MMP/attribution, а не с единым продуктовым контуром.</p>
+</div>
+</div>
+<div class="glass-panel p-stack-md rounded-[24px] flex gap-4 items-start border-primary/30">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" данные-weight="fill">lightbulb</span>
+</div>
+<div>
+<h4 class="text-body-md font-bold text-on-surface mb-1">Вывод</h4>
+<p class="text-label-md text-on-surface-variant">AppsFlyer и Adjust сильнее в международной экосистеме и enterprise-упаковке; AppMetrica выигрывает в РФ-fit и связке маркетинг + продукт + данные.</p>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+        // Micro-interaction for table cells
+        document.querySelectorAll('.cell-transition').forEach(cell => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.filter = 'brightness(1.2)';
+            });
+            cell.addEventListener('mouseleave', () => {
+                cell.style.filter = 'none';
+            });
+        });
+
+        // Simple scroll parallax for abstract background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelector('.abstract-bg').style.transform = `translateY(${scrolled * 0.1}px)`;
+        });
+    </script>
+</body></html>

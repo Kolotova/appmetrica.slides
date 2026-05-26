@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Выбор конкурентов | AppMetrica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1d1f26",
+                    "surface-container-low": "#191b22",
+                    "on-tertiary": "#3c0091",
+                    "background": "#11131a",
+                    "on-error": "#690005",
+                    "tertiary-container": "#a078ff",
+                    "surface-bright": "#373940",
+                    "on-tertiary-container": "#340080",
+                    "on-tertiary-fixed-variant": "#5600ca",
+                    "tertiary-fixed-dim": "#d0bcff",
+                    "on-surface-variant": "#c2c6d5",
+                    "on-primary-container": "#00275f",
+                    "inverse-on-surface": "#2e3037",
+                    "secondary-container": "#c2006a",
+                    "primary-fixed-dim": "#afc6ff",
+                    "tertiary-fixed": "#e9ddff",
+                    "surface-container-highest": "#32353c",
+                    "surface-container-lowest": "#0c0e14",
+                    "secondary-fixed-dim": "#ffb0c9",
+                    "on-primary-fixed-variant": "#004398",
+                    "surface-variant": "#32353c",
+                    "surface-dim": "#11131a",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#8e004c",
+                    "inverse-primary": "#0059c6",
+                    "inverse-surface": "#e1e2eb",
+                    "surface-tint": "#afc6ff",
+                    "on-surface": "#e1e2eb",
+                    "error-container": "#93000a",
+                    "primary-container": "#538dfd",
+                    "secondary": "#ffb0c9",
+                    "outline": "#8c909f",
+                    "primary-fixed": "#d9e2ff",
+                    "on-background": "#e1e2eb",
+                    "on-primary-fixed": "#001a43",
+                    "secondary-fixed": "#ffd9e3",
+                    "on-tertiary-fixed": "#23005c",
+                    "surface": "#11131a",
+                    "tertiary": "#d0bcff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#002d6c",
+                    "surface-container-high": "#272a31",
+                    "on-secondary-container": "#ffd6e0",
+                    "outline-variant": "#424753",
+                    "primary": "#afc6ff",
+                    "on-secondary": "#650034",
+                    "on-secondary-fixed": "#3e001e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1440px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "number-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0E121A;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: #191E28;
+            border: 1px solid #303849;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #4D88F7;
+            transform: translateY(-4px);
+            background: #202635;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .accent-gradient-blue { background: linear-gradient(180deg, #4D88F7 0%, rgba(77, 136, 247, 0) 100%); }
+        .accent-gradient-pink { background: linear-gradient(180deg, #ffb0c9 0%, rgba(255, 176, 201, 0) 100%); }
+        .accent-gradient-purple { background: linear-gradient(180deg, #a078ff 0%, rgba(160, 120, 255, 0) 100%); }
+    </style>
+<style id="slide-04-align">
+.glass-card{min-height:392px}.glass-card .mt-auto{min-height:96px}.glass-card p.leading-relaxed{min-height:96px}.glass-card .mb-stack-lg{min-height:64px}
+</style>
+<style id="deck-eyebrow-style">
+.deck-eyebrow{display:inline-flex;align-items:center;width:max-content;padding:4px 16px;border-radius:9999px;background:rgba(83,141,253,.10);border:1px solid rgba(83,141,253,.20);color:#afc6ff;font-family:Inter,sans-serif;font-size:14px;line-height:20px;font-weight:500;letter-spacing:0;text-transform:none;margin-bottom:16px}
+</style>
+<style id="slide-04-grid-align">
+.glass-card{min-height:408px}.glass-card .mb-stack-lg{min-height:68px}.glass-card h3{min-height:40px}.glass-card p.leading-relaxed{min-height:112px}.glass-card .mt-auto{min-height:108px}.glass-card .mt-auto>div{min-height:28px}.glass-card span{letter-spacing:0}.glass-card [class*=tracking]{letter-spacing:0!important}
+</style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto z-50 sticky top-0">
+<div class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface">
+            AppMetrica
+        </div>
+
+<div class="flex gap-stack-md">
+
+
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-stack-xl">
+<!-- Heading Section -->
+<div class="mb-stack-xl max-w-4xl">
+<span class="deck-eyebrow">Конкурентная рамка</span>
+<h1 class="text-display-lg font-display-lg text-on-surface mb-stack-md">
+                Ключевые конкуренты в РФ: MyTracker, AppsFlyer, Adjust
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                Для РФ-контекста берем прямых MMP-конкурентов, которые закрывают attribution-сценарии и реально встречаются в выборе мобильных команд.
+            </p>
+</div>
+<!-- Competitor Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-xl">
+<!-- MyTracker -->
+<div class="glass-card rounded-[32px] p-10 flex flex-col relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-[6px] accent-gradient-blue opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-stack-lg flex justify-between items-start">
+<div class="p-3 bg-primary-container/20 rounded-xl">
+<span class="material-symbols-outlined text-primary text-3xl">local_mall</span>
+</div>
+<span class="px-stack-sm py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-label-md font-label-md whitespace-nowrap min-h-[32px] inline-flex items-center">Локальный MMP</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-stack-sm">MyTracker</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-stack-lg leading-relaxed">
+                    Локально релевантный MMP с сильным бесплатным входом и понятной применимостью для российских команд.
+                </p>
+<div class="mt-auto space-y-stack-sm">
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-label-md font-label-md">Бесплатный вход</span>
+</div>
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-label-md font-label-md">РФ-контур</span>
+</div>
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="text-label-md font-label-md">Локальная релевантность</span>
+</div>
+</div>
+</div>
+<!-- AppsFlyer -->
+<div class="glass-card rounded-[32px] p-10 flex flex-col relative overflow-hidden group border-secondary-container/30">
+<div class="absolute top-0 left-0 w-full h-[6px] accent-gradient-pink opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-stack-lg flex justify-between items-start">
+<div class="p-3 bg-secondary-container/20 rounded-xl">
+<span class="material-symbols-outlined text-secondary text-3xl">public</span>
+</div>
+<span class="px-stack-sm py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20 text-label-md font-label-md whitespace-nowrap min-h-[32px] inline-flex items-center">Глобальный стандарт</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-stack-sm">AppsFlyer</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-stack-lg leading-relaxed">
+                    Глобальный attribution-стандарт для performance-команд и крупных рекламных бюджетов.
+                </p>
+<div class="mt-auto space-y-stack-sm">
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+<span class="text-label-md font-label-md whitespace-nowrap min-h-[32px] inline-flex items-center">Глобальный стандарт</span>
+</div>
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+<span class="text-label-md font-label-md">Performance-сценарии</span>
+</div>
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+<span class="text-label-md font-label-md">Партнерская экосистема</span>
+</div>
+</div>
+</div>
+<!-- Adjust -->
+<div class="glass-card rounded-[32px] p-10 flex flex-col relative overflow-hidden group border-tertiary-container/30">
+<div class="absolute top-0 left-0 w-full h-[6px] accent-gradient-purple opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-stack-lg flex justify-between items-start">
+<div class="p-3 bg-tertiary-container/20 rounded-xl">
+<span class="material-symbols-outlined text-tertiary text-3xl">corporate_fare</span>
+</div>
+<span class="px-stack-sm py-1 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/20 text-label-md font-label-md whitespace-nowrap min-h-[32px] inline-flex items-center">Enterprise MMP</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-stack-sm">Adjust</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-stack-lg leading-relaxed">
+                    Зрелый MMP для performance и enterprise-сценариев, где важны атрибуция, интеграции и контроль качества трафика.
+                </p>
+<div class="mt-auto space-y-stack-sm">
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm">security</span>
+<span class="text-label-md font-label-md">Enterprise-сценарии</span>
+</div>
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm">security</span>
+<span class="text-label-md font-label-md">Атрибуция</span>
+</div>
+<div class="flex items-center gap-stack-sm text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-sm">security</span>
+<span class="text-label-md font-label-md">Интеграции</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ecosystem Breakdown / Bottom Note -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-gutter bg-surface-container-low p-8 rounded-[32px] border border-outline-variant">
+<div class="lg:col-span-1 border-r border-outline-variant/30 pr-stack-md flex flex-col justify-center">
+<h4 class="text-label-md font-label-md text-primary uppercase tracking-widest mb-stack-sm">Пояснение</h4>
+<p class="text-headline-md font-headline-md text-on-surface">Рыночный контекст</p>
+</div>
+<div class="lg:col-span-3 flex flex-col justify-center">
+<p class="text-body-md font-body-md text-on-surface-variant italic mb-stack-md">
+                    Branch учитывается в международном контуре. Firebase – смежный продуктовый слой. В РФ-топ-3 входят MyTracker, AppsFlyer и Adjust.
+                </p>
+<div class="flex flex-wrap gap-stack-md">
+<div class="flex items-center gap-stack-sm bg-background/50 px-stack-md py-2 rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-label-md font-label-md">Branch – международный контур</span>
+</div>
+<div class="flex items-center gap-stack-sm bg-background/50 px-stack-md py-2 rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-md font-label-md">Firebase – смежный слой</span>
+</div>
+<div class="flex items-center gap-stack-sm bg-background/50 px-stack-md py-2 rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-label-md font-label-md">РФ-топ-3: MyTracker, AppsFlyer, Adjust</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- Ambient Micro-Interaction Script -->
+<script>
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

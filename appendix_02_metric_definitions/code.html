@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Appendix 02: Расшифровка метрик | AppMetrica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1d1f26",
+                        "surface-container-low": "#191b22",
+                        "on-tertiary": "#3c0091",
+                        "background": "#11131a",
+                        "on-error": "#690005",
+                        "tertiary-container": "#a078ff",
+                        "surface-bright": "#373940",
+                        "on-tertiary-container": "#340080",
+                        "on-tertiary-fixed-variant": "#5600ca",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "on-surface-variant": "#c2c6d5",
+                        "on-primary-container": "#00275f",
+                        "inverse-on-surface": "#2e3037",
+                        "secondary-container": "#c2006a",
+                        "primary-fixed-dim": "#afc6ff",
+                        "tertiary-fixed": "#e9ddff",
+                        "surface-container-highest": "#32353c",
+                        "surface-container-lowest": "#0c0e14",
+                        "secondary-fixed-dim": "#ffb0c9",
+                        "on-primary-fixed-variant": "#004398",
+                        "surface-variant": "#32353c",
+                        "surface-dim": "#11131a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#8e004c",
+                        "inverse-primary": "#0059c6",
+                        "inverse-surface": "#e1e2eb",
+                        "surface-tint": "#afc6ff",
+                        "on-surface": "#e1e2eb",
+                        "error-container": "#93000a",
+                        "primary-container": "#538dfd",
+                        "secondary": "#ffb0c9",
+                        "outline": "#8c909f",
+                        "primary-fixed": "#d9e2ff",
+                        "on-background": "#e1e2eb",
+                        "on-primary-fixed": "#001a43",
+                        "secondary-fixed": "#ffd9e3",
+                        "on-tertiary-fixed": "#23005c",
+                        "surface": "#11131a",
+                        "tertiary": "#d0bcff",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#002d6c",
+                        "surface-container-high": "#272a31",
+                        "on-secondary-container": "#ffd6e0",
+                        "outline-variant": "#424753",
+                        "primary": "#afc6ff",
+                        "on-secondary": "#650034",
+                        "on-secondary-fixed": "#3e001e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "stack-xl": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "number-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(77, 136, 247, 0.1) 0%, transparent 70%);
+        }
+    </style>
+<style id="appendix-02-table-fit">
+table{table-layout:auto}.font-headline-md.text-headline-md{font-size:22px;line-height:28px}td,th{vertical-align:top}.text-number-lg{font-size:20px;line-height:28px}
+</style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface">
+            AppMetrica
+        </div>
+
+<div class="flex gap-stack-md items-center">
+
+
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-xl">
+<!-- Hero Section / Header -->
+<section class="mb-stack-xl">
+<div class="flex items-center gap-stack-sm mb-stack-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="text-primary font-label-md text-label-md tracking-widest uppercase">Расшифровка</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-md">Appendix 02: Расшифровка метрик</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Определения метрик, используемых в блоке про рост AppMetrica, A2V30 и маркетинговую воронку.
+            </p>
+</section>
+<!-- Metrics Table Canvas -->
+<div class="bg-surface-container rounded-[32px] border border-outline-variant overflow-hidden bento-glow">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="px-gutter py-stack-md font-label-md text-label-md text-outline uppercase tracking-wider">Метрика</th>
+<th class="px-gutter py-stack-md font-label-md text-label-md text-outline uppercase tracking-wider">Блок</th>
+<th class="px-gutter py-stack-md font-label-md text-label-md text-outline uppercase tracking-wider">Определение</th>
+<th class="px-gutter py-stack-md font-label-md text-label-md text-outline uppercase tracking-wider">Как читать</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- A2V30 -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">A2V30</div>
+<div class="text-outline font-label-md text-label-md mt-1">Активация</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-label-md border border-primary/20">
+                                    активация
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Доля новых квалифицированных клиентов, которые за 30 дней дошли до первого измеримого value moment.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-primary">рост к baseline</span>
+</td>
+</tr>
+<!-- SDK integration rate -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">SDK integration rate</div>
+<div class="text-outline font-label-md text-label-md mt-1">Интеграция</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container/10 text-tertiary font-label-md text-label-md border border-tertiary/20">
+                                    данные
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Доля клиентов, которые завершили подключение SDK или валидный импорт данных.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-on-surface">чем выше, тем лучше</span>
+</td>
+</tr>
+<!-- First event rate -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">First event rate</div>
+<div class="text-outline font-label-md text-label-md mt-1">Первые данные</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-label-md border border-primary/20">
+                                    активация
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Доля клиентов, у которых появились первые события после подключения SDK.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-on-surface">ранний сигнал активации</span>
+</td>
+</tr>
+<!-- First report rate -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">First report rate</div>
+<div class="text-outline font-label-md text-label-md mt-1">Первый результат</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary font-label-md text-label-md border border-primary/20">
+                                    активация
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Доля клиентов, которые открыли первый полезный отчет: канал, воронка, ROAS или BI-export.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-on-surface">value moment</span>
+</td>
+</tr>
+<!-- Activated-to-paid conversion -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">Activated-to-paid conversion</div>
+<div class="text-outline font-label-md text-label-md mt-1">Монетизация</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/10 text-secondary font-label-md text-label-md border border-secondary/20">
+                                    бизнес
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Доля активированных клиентов, которые перешли в платный контур или расширили лимиты.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-on-secondary-fixed-variant">после активации</span>
+</td>
+</tr>
+<!-- Logs API / Data Stream adoption -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">Logs API / Data Stream adoption</div>
+<div class="text-outline font-label-md text-label-md mt-1">Data / BI</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-tertiary-container/10 text-tertiary font-label-md text-label-md border border-tertiary/20">
+                                    данные
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Доля клиентов, которые подключили Logs API, Data Stream или регулярную выгрузку данных.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-on-surface">enterprise-сигнал</span>
+</td>
+</tr>
+<!-- Guardrails -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top">
+<div class="font-headline-md text-headline-md text-on-surface">Guardrails</div>
+<div class="text-outline font-label-md text-label-md mt-1">Качество</div>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-error-container/10 text-error font-label-md text-label-md border border-error/20">
+                                    качество
+                                </span>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">
+                                    Ограничения качества: ошибки интеграции, support load, churn, стоимость активации.
+                                </p>
+</td>
+<td class="px-gutter py-stack-lg align-top">
+<span class="font-number-lg text-number-lg text-error">guardrail</span>
+</td>
+</tr>
+
+<!-- Marketing metrics -->
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top"><div class="font-headline-md text-headline-md text-on-surface">MQL → SQL</div><div class="text-outline font-label-md text-label-md mt-1">Маркетинг → продажи</div></td>
+<td class="px-gutter py-stack-lg align-top"><span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/10 text-secondary font-label-md text-label-md border border-secondary/20">маркетинг</span></td>
+<td class="px-gutter py-stack-lg align-top"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">Доля маркетинговых лидов, которые прошли квалификацию и стали sales-qualified lead для пилота или продажи.</p></td>
+<td class="px-gutter py-stack-lg align-top"><span class="font-number-lg text-number-lg text-on-surface">качество спроса</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top"><div class="font-headline-md text-headline-md text-on-surface">Win rate</div><div class="text-outline font-label-md text-label-md mt-1">Продажи</div></td>
+<td class="px-gutter py-stack-lg align-top"><span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/10 text-secondary font-label-md text-label-md border border-secondary/20">маркетинг</span></td>
+<td class="px-gutter py-stack-lg align-top"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">Доля сделок или пилотов, которые AppMetrica выигрывает у MyTracker, AppsFlyer, Adjust или текущего решения клиента.</p></td>
+<td class="px-gutter py-stack-lg align-top"><span class="font-number-lg text-number-lg text-on-surface">конкурентная сила</span></td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors">
+<td class="px-gutter py-stack-lg align-top"><div class="font-headline-md text-headline-md text-on-surface">Pipeline value</div><div class="text-outline font-label-md text-label-md mt-1">Потенциал выручки</div></td>
+<td class="px-gutter py-stack-lg align-top"><span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/10 text-secondary font-label-md text-label-md border border-secondary/20">маркетинг</span></td>
+<td class="px-gutter py-stack-lg align-top"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-lg">Оценочный объем потенциальной выручки в активных лидах, демо и пилотах по сегментам A/B/C.</p></td>
+<td class="px-gutter py-stack-lg align-top"><span class="font-number-lg text-number-lg text-on-surface">будущая выручка</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Abstract Visual Graphic -->
+<div class="mt-stack-xl relative h-[400px] rounded-[32px] overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 bg-surface-container-low flex items-center justify-center">
+<div class="relative w-full h-full opacity-40">
+<!-- Geometric Background Simulation -->
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 blur-[120px] rounded-full animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 blur-[100px] rounded-full"></div>
+</div>
+<div class="z-10 text-center px-margin-desktop">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Как использовать</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+                        Метрики смотреть по сегментам A/B/C, каналам привлечения и роли пользователя.
+                    </p>
+</div>
+</div>
+<img alt="Technical abstract данные visualization" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" данные-alt="A sophisticated digital artwork featuring abstract 3D geometric structures that resemble a complex architectural blueprint of данные flows. The scene is set in a deep, cinematic dark-mode atmosphere with a primary color palette of midnight navy and charcoal gray. Sharp, glowing lines of vibrant cyan and neon purple trace paths between floating nodes, creating a high-end command and control center vibe. The lighting is focused and moody, emphasizing the structural clarity and technological precision of the composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWBFsp5FeUQC7hLxLK4WuVpaVZOtO7S-s8iJXs6dzRfqIfeHHsSU6W4ehpyIuRzbvCYJz31YVF2930-x7Sz6J29AC-fW3IJrzHGdwR7jted2ALfZJc4073CiYejcwFO66IPWmpRllg5QAcFEyFcwWsl0OgyhQyy214UA-h5NoMQniX4bDjUeFaLHS_GTj_-nYHpThnw0dpZf15EeyYJt582LvFrGh-tjhLKlvfjvJiAzzqjntRjtu_VbZXRT-lkpYcvysNFd5_IPEt"/>
+</div>
+</main>
+
+<script>
+        // Micro-interactions: Row highlighting glow effect
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.boxShadow = 'inset 4px 0 0 0 #afc6ff';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body></html>

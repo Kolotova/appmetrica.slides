@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Problem Frame</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#ffd6e0",
+                    "tertiary-container": "#a078ff",
+                    "surface-bright": "#373940",
+                    "surface-variant": "#32353c",
+                    "surface": "#11131a",
+                    "primary-container": "#538dfd",
+                    "on-secondary-fixed": "#3e001e",
+                    "inverse-primary": "#0059c6",
+                    "surface-container-highest": "#32353c",
+                    "on-tertiary-fixed": "#23005c",
+                    "surface-dim": "#11131a",
+                    "surface-container-lowest": "#0c0e14",
+                    "on-error": "#690005",
+                    "secondary": "#ffb0c9",
+                    "on-primary-fixed": "#001a43",
+                    "inverse-surface": "#e1e2eb",
+                    "background": "#11131a",
+                    "primary": "#afc6ff",
+                    "inverse-on-surface": "#2e3037",
+                    "on-primary": "#002d6c",
+                    "error-container": "#93000a",
+                    "on-surface-variant": "#c2c6d5",
+                    "on-tertiary-fixed-variant": "#5600ca",
+                    "outline": "#8c909f",
+                    "surface-container-high": "#272a31",
+                    "tertiary-fixed": "#e9ddff",
+                    "surface-container": "#1d1f26",
+                    "on-primary-fixed-variant": "#004398",
+                    "on-surface": "#e1e2eb",
+                    "surface-container-low": "#191b22",
+                    "tertiary-fixed-dim": "#d0bcff",
+                    "on-secondary": "#650034",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e1e2eb",
+                    "tertiary": "#d0bcff",
+                    "primary-fixed": "#d9e2ff",
+                    "on-primary-container": "#00275f",
+                    "secondary-fixed-dim": "#ffb0c9",
+                    "outline-variant": "#424753",
+                    "secondary-container": "#c2006a",
+                    "on-tertiary-container": "#340080",
+                    "secondary-fixed": "#ffd9e3",
+                    "primary-fixed-dim": "#afc6ff",
+                    "on-secondary-fixed-variant": "#8e004c",
+                    "surface-tint": "#afc6ff",
+                    "on-tertiary": "#3c0091"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "stack-sm": "8px",
+                    "stack-xl": "64px",
+                    "gutter": "24px",
+                    "container-max": "1440px",
+                    "margin-desktop": "64px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "number-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0E121A;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .tonal-card {
+            background-color: #191E28;
+            border: 1px solid #303849;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .tonal-card:hover {
+            border-color: #4D88F7;
+        }
+        .metric-gradient {
+            background: linear-gradient(135deg, #538dfd 0%, #a078ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(25, 30, 40, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(48, 56, 73, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style id="telegram-cleanup-style">
+body{background:#11131a!important;color:#e1e2eb!important;font-family:Inter,Arial,sans-serif!important}
+header,body>nav,footer{display:none!important}
+main{padding-top:64px!important}
+.deck-eyebrow{display:inline-flex!important;align-items:center!important;width:max-content!important;padding:4px 16px!important;border-radius:9999px!important;background:rgba(83,141,253,.10)!important;border:1px solid rgba(83,141,253,.20)!important;color:#afc6ff!important;font-family:Inter,sans-serif!important;font-size:14px!important;line-height:20px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:16px!important}
+[class*="tracking"]{letter-spacing:0!important}
+.no-ai-garbage{display:none!important}
+</style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopNavBar from Shared Components -->
+<main class="pt-32 pb-20 px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="mb-stack-xl">
+
+<h1 class="font-headline-lg text-headline-lg mb-4 text-on-surface">Почему пользователи не указывают Telegram</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Проблема не только в мотивации: часть пользователей может не знать о настройке.</p>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Metric Panel (Formula & Projection) -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div class="tonal-card p-10 rounded-[32px] h-full flex flex-col justify-center">
+<div class="mb-10">
+<p class="text-on-surface-variant font-label-md text-label-md mb-4">Формула метрики</p>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+<code class="font-number-lg text-headline-md block text-center leading-relaxed">
+<span class="text-primary">Telegram adoption rate</span><br/>
+<span class="text-on-surface-variant">=</span><br/>
+<span class="border-b border-outline-variant pb-1">указали Telegram</span><br/>
+<span class="pt-1">активные пользователи Директа</span>
+</code>
+</div>
+</div>
+<div class="flex items-end justify-between gap-4 pt-6 border-t border-outline-variant">
+<div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-2">Текущее значение</p>
+<span class="font-display-lg text-display-lg text-on-surface-variant">10%</span>
+</div>
+<div class="flex-grow flex items-center justify-center pb-4">
+<span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+</div>
+<div class="text-right">
+<p class="text-primary font-label-md text-label-md mb-2">Цель</p>
+<span class="font-display-lg text-display-lg metric-gradient">30%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side Cards (2x2 Grid) -->
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="tonal-card p-stack-lg rounded-[32px] flex flex-col">
+<div class="bg-primary-container/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">visibility_off</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Не знают</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Не видели настройку или не поняли, что Telegram можно подключить.</p>
+</div>
+<!-- Card 2 -->
+<div class="tonal-card p-stack-lg rounded-[32px] flex flex-col">
+<div class="bg-tertiary-container/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary">monetization_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Не видят ценности</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Считают Telegram еще одним каналом связи.</p>
+</div>
+<!-- Card 3 -->
+<div class="tonal-card p-stack-lg rounded-[32px] flex flex-col">
+<div class="bg-secondary-container/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">info</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Не понимают уведомления</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Неясно, что будет приходить: бюджет, модерация, оплата, остановки.</p>
+</div>
+<!-- Card 4 -->
+<div class="tonal-card p-stack-lg rounded-[32px] flex flex-col">
+<div class="bg-error-container/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-error">notifications_paused</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-on-surface">Боятся лишнего шума</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Есть риск ожидания нерелевантных сообщений.</p>
+</div>
+</div>
+</div>
+<!-- Bottom Conclusion Strip -->
+<div class="mt-stack-xl glass-panel p-8 rounded-[32px] flex items-center justify-between overflow-hidden relative">
+<div class="relative z-10 flex items-center gap-stack-lg">
+<div class="bg-primary p-2 rounded-full">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">
+                    Нужно закрыть <span class="text-primary">знание</span>, <span class="text-tertiary">ценность</span> и <span class="text-secondary">понятный сценарий</span> подключения
+                </p>
+</div>
+<div class="absolute right-0 top-0 bottom-0 w-64 bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+</div>
+</main>
+<!-- Footer from Shared Components -->
+<!-- Atmosphere/Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.tonal-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+                
+                // Subtle tilt effect
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 50;
+                const rotateY = (centerX - x) / 50;
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+            });
+        });
+    </script>
+</body></html>

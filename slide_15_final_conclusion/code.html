@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Финальный вывод | AppMetrica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1d1f26",
+                    "surface-container-low": "#191b22",
+                    "on-tertiary": "#3c0091",
+                    "background": "#11131a",
+                    "on-error": "#690005",
+                    "tertiary-container": "#a078ff",
+                    "surface-bright": "#373940",
+                    "on-tertiary-container": "#340080",
+                    "on-tertiary-fixed-variant": "#5600ca",
+                    "tertiary-fixed-dim": "#d0bcff",
+                    "on-surface-variant": "#c2c6d5",
+                    "on-primary-container": "#00275f",
+                    "inverse-on-surface": "#2e3037",
+                    "secondary-container": "#c2006a",
+                    "primary-fixed-dim": "#afc6ff",
+                    "tertiary-fixed": "#e9ddff",
+                    "surface-container-highest": "#32353c",
+                    "surface-container-lowest": "#0c0e14",
+                    "secondary-fixed-dim": "#ffb0c9",
+                    "on-primary-fixed-variant": "#004398",
+                    "surface-variant": "#32353c",
+                    "surface-dim": "#11131a",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#8e004c",
+                    "inverse-primary": "#0059c6",
+                    "inverse-surface": "#e1e2eb",
+                    "surface-tint": "#afc6ff",
+                    "on-surface": "#e1e2eb",
+                    "error-container": "#93000a",
+                    "primary-container": "#538dfd",
+                    "secondary": "#ffb0c9",
+                    "outline": "#8c909f",
+                    "primary-fixed": "#d9e2ff",
+                    "on-background": "#e1e2eb",
+                    "on-primary-fixed": "#001a43",
+                    "secondary-fixed": "#ffd9e3",
+                    "on-tertiary-fixed": "#23005c",
+                    "surface": "#11131a",
+                    "tertiary": "#d0bcff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#002d6c",
+                    "surface-container-high": "#272a31",
+                    "on-secondary-container": "#ffd6e0",
+                    "outline-variant": "#424753",
+                    "primary": "#afc6ff",
+                    "on-secondary": "#650034",
+                    "on-secondary-fixed": "#3e001e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1440px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "number-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .tonal-layer-1 { background-color: #191E28; border: 1px solid #303849; }
+        .tonal-layer-2 { background-color: #202635; }
+        .card-radius { border-radius: 32px; }
+        .glow-accent { box-shadow: 0 0 40px -10px rgba(77, 136, 247, 0.2); }
+        .gradient-strip { background: linear-gradient(90deg, #4D88F7 0%, #a078ff 100%); }
+    </style>
+<style id="deck-eyebrow-style">.deck-eyebrow{display:inline-flex;align-items:center;width:max-content;padding:4px 16px;border-radius:9999px;background:rgba(83,141,253,.10);border:1px solid rgba(83,141,253,.20);color:#afc6ff;font-family:Inter,sans-serif;font-size:14px;line-height:20px;font-weight:500;letter-spacing:0;text-transform:none;margin-bottom:16px}</style>
+<style id="slide-15-align">
+.conclusion-card{box-sizing:border-box;min-width:0;display:grid!important;grid-template-columns:72px minmax(0,1fr)!important;gap:24px!important;align-items:center!important;min-height:132px;padding:28px 32px!important}
+.conclusion-card .w-16{width:64px!important;height:64px!important;align-self:center!important}
+.conclusion-card h3,.conclusion-card p,.conclusion-card span{letter-spacing:0!important}
+.conclusion-card h3{font-size:28px!important;line-height:34px!important;margin:0 0 8px!important}
+.conclusion-card p{font-size:18px!important;line-height:26px!important;margin:0!important}
+.conclusion-card-balance{min-height:164px!important}
+.conclusion-balance{display:grid!important;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr)!important;gap:22px!important;align-items:start!important;max-width:100%}
+.conclusion-balance .balance-divider{display:block;width:1px;height:58px;background:#8c909f;opacity:.65;align-self:center}
+.conclusion-balance .text-primary,.conclusion-balance .text-secondary{font-size:15px!important;line-height:22px!important;font-weight:700!important}
+.metric-chip{white-space:nowrap;font-size:10px!important;line-height:14px!important;padding:3px 8px!important;align-self:center}
+@media(min-width:1024px){
+  .conclusion-card{grid-template-columns:80px minmax(0,1fr)!important;gap:28px!important;min-height:138px;padding:28px 34px!important}
+  .conclusion-card-balance{min-height:172px!important}
+}
+@media(max-width:760px){
+  .conclusion-card{grid-template-columns:56px minmax(0,1fr)!important;gap:18px!important;padding:24px!important}
+  .conclusion-card .w-16{width:56px!important;height:56px!important}
+  .conclusion-card h3{font-size:24px!important;line-height:30px!important}
+  .conclusion-card p{font-size:16px!important;line-height:24px!important}
+  .conclusion-balance{grid-template-columns:1fr!important;gap:10px!important}
+  .conclusion-balance .balance-divider{display:none!important}
+}
+</style></head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background w-full z-50">
+
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-stack-xl grid grid-cols-12 gap-gutter items-center">
+<!-- Left Side: Large Heading -->
+<div class="col-span-12 lg:col-span-6 pr-stack-xl">
+<span class="deck-eyebrow">Финальный вывод</span>
+<h1 class="text-display-lg font-display-lg text-on-surface mb-stack-lg leading-tight">
+                AppMetrica сильна там, где аналитика становится решением
+            </h1>
+<p class="text-on-surface-variant text-body-lg font-body-lg max-w-md">
+                В РФ-контуре AppMetrica выглядит сильным выбором для команд, которым нужно связать рекламу, поведение пользователей и продуктовые данные.
+            </p>
+<div class="mt-stack-xl flex items-center gap-stack-md opacity-40">
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" данные-icon="insights">insights</span>
+</div>
+<div class="h-[1px] w-24 bg-outline-variant"></div>
+<div class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" данные-icon="query_stats">query_stats</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Stacked Conclusion Cards -->
+<div class="col-span-12 lg:col-span-6 flex flex-col gap-stack-md">
+<!-- Card 1: Топ-3 конкурента -->
+<div class="tonal-layer-1 card-radius p-stack-lg flex items-center gap-stack-lg conclusion-card group hover:border-primary/50 transition-all">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-lg" данные-icon="leaderboard">leaderboard</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-1">Топ-3 конкурента</h3>
+<p class="text-on-surface-variant text-body-md font-body-md">MyTracker, AppsFlyer, Adjust – ключевые конкуренты в РФ-контуре.</p>
+</div>
+</div>
+<!-- Card 2: 3 преимущества / 3 зоны развития -->
+<div class="tonal-layer-1 card-radius p-stack-lg flex items-center gap-stack-lg conclusion-card conclusion-card-balance group hover:border-secondary transition-all">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-headline-lg" данные-icon="balance">balance</span>
+</div>
+<div class="flex-grow">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">3 преимущества / 3 зоны развития</h3>
+<div class="conclusion-balance text-label-md font-label-md">
+<span class="text-primary">+ РФ-контур, единый стек, быстрый старт</span>
+<span class="balance-divider" aria-hidden="true"></span>
+<span class="text-secondary">- глобальный масштаб, enterprise-упаковка, web-to-app</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Бизнес Metric -->
+<div class="tonal-layer-1 card-radius p-stack-lg flex items-center gap-stack-lg conclusion-card group hover:border-tertiary transition-all">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-headline-lg" данные-icon="trending_up">trending_up</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-headline-md font-headline-md text-on-surface">A2V30</h3>
+<span class="metric-chip px-2 py-0.5 rounded bg-tertiary/10 text-tertiary text-[10px] font-bold">метрика роста</span>
+</div>
+<p class="text-on-surface-variant text-body-md font-body-md">Метрика роста: клиент дошел до первого value moment за 30 дней.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Wide Accent Strip -->
+<section class="w-full mt-auto">
+<div class="gradient-strip w-full py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-stack-md">
+<div class="flex items-center gap-stack-md text-on-primary-fixed">
+<span class="material-symbols-outlined text-headline-md" данные-icon="hub" style="font-variation-settings: 'FILL' 1;">hub</span>
+<p class="text-headline-md font-headline-md tracking-tight">
+                        Маркетинг и продукт работают на один результат: вместе быстрее можно довести клиента до бизнес-эффекта.
+                    </p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Subtle atmospheric effect -->
+<div class="fixed top-0 right-0 -z-10 w-1/2 h-1/2 bg-primary/5 blur-[120px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-1/3 h-1/3 bg-tertiary/5 blur-[100px] pointer-events-none"></div>
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.tonal-layer-1').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+                card.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(77, 136, 247, 0.05), transparent 40%)`;
+                card.style.backgroundColor = '#191E28';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.background = '#191E28';
+            });
+        });
+    </script>
+</body></html>

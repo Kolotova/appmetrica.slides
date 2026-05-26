@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1d1f26",
+                    "surface-container-low": "#191b22",
+                    "on-tertiary": "#3c0091",
+                    "background": "#11131a",
+                    "on-error": "#690005",
+                    "tertiary-container": "#a078ff",
+                    "surface-bright": "#373940",
+                    "on-tertiary-container": "#340080",
+                    "on-tertiary-fixed-variant": "#5600ca",
+                    "tertiary-fixed-dim": "#d0bcff",
+                    "on-surface-variant": "#c2c6d5",
+                    "on-primary-container": "#00275f",
+                    "inverse-on-surface": "#2e3037",
+                    "secondary-container": "#c2006a",
+                    "primary-fixed-dim": "#afc6ff",
+                    "tertiary-fixed": "#e9ddff",
+                    "surface-container-highest": "#32353c",
+                    "surface-container-lowest": "#0c0e14",
+                    "secondary-fixed-dim": "#ffb0c9",
+                    "on-primary-fixed-variant": "#004398",
+                    "surface-variant": "#32353c",
+                    "surface-dim": "#11131a",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#8e004c",
+                    "inverse-primary": "#0059c6",
+                    "inverse-surface": "#e1e2eb",
+                    "surface-tint": "#afc6ff",
+                    "on-surface": "#e1e2eb",
+                    "error-container": "#93000a",
+                    "primary-container": "#538dfd",
+                    "secondary": "#ffb0c9",
+                    "outline": "#8c909f",
+                    "primary-fixed": "#d9e2ff",
+                    "on-background": "#e1e2eb",
+                    "on-primary-fixed": "#001a43",
+                    "secondary-fixed": "#ffd9e3",
+                    "on-tertiary-fixed": "#23005c",
+                    "surface": "#11131a",
+                    "tertiary": "#d0bcff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#002d6c",
+                    "surface-container-high": "#272a31",
+                    "on-secondary-container": "#ffd6e0",
+                    "outline-variant": "#424753",
+                    "primary": "#afc6ff",
+                    "on-secondary": "#650034",
+                    "on-secondary-fixed": "#3e001e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1440px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "number-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #11131a;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .bento-card {
+            background: #191E28;
+            border: 1px solid #303849;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .bento-card:hover {
+            border-color: #4D88F7;
+        }
+        .gradient-accent-blue {
+            background: linear-gradient(135deg, #4D88F7 0%, #a078ff 100%);
+        }
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<style id="slide-02-align">
+.bento-card{min-height:420px}.bento-card h3{min-height:64px}.bento-card ul{min-height:132px}.bento-card li{min-height:24px}.bento-card>div:last-child{min-height:92px}
+</style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface">
+                AppMetrica
+            </div>
+
+
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-stack-xl flex flex-col gap-stack-xl">
+<!-- Header Section -->
+<section class="max-w-4xl">
+<h1 class="text-display-lg font-display-lg mb-stack-md leading-tight">
+                AppMetrica конкурирует в нескольких задачах клиента
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
+                AppMetrica закрывает атрибуцию рекламы, продуктовую аналитику, коммуникации и выгрузку данных. Поэтому конкурентов нужно смотреть через задачи команд, которые используют сервис для роста мобильного приложения.
+            </p>
+</section>
+<!-- Framework Cards (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Attribution Card -->
+<div class="bento-card p-10 rounded-[32px] flex flex-col h-full relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 gradient-accent-blue opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">ads_click</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-4 text-primary">Attribution / MMP</h3>
+<ul class="flex flex-col gap-stack-sm text-body-md font-body-md text-on-surface-variant flex-grow">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Источники
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Кампании
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Postback
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> ROAS
+                    </li>
+</ul>
+<div class="mt-8 pt-6 border-t border-outline-variant">
+<p class="text-label-md font-label-md uppercase tracking-wider text-outline">MMP-контур</p>
+<p class="text-body-md font-body-md mt-1">Атрибуция и эффективность рекламы</p>
+</div>
+</div>
+<!-- Product Analytics Card -->
+<div class="bento-card p-10 rounded-[32px] flex flex-col h-full relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">insights</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-4 text-secondary">Product analytics</h3>
+<ul class="flex flex-col gap-stack-sm text-body-md font-body-md text-on-surface-variant flex-grow">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Events
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Funnels
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Adoption
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Segments
+                    </li>
+</ul>
+<div class="mt-8 pt-6 border-t border-outline-variant">
+<p class="text-label-md font-label-md uppercase tracking-wider text-outline">Продуктовый контур</p>
+<p class="text-body-md font-body-md mt-1">Поведение и решения</p>
+</div>
+</div>
+<!-- Data / BI Card -->
+<div class="bento-card p-10 rounded-[32px] flex flex-col h-full relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-tertiary opacity-50 group-hover:opacity-100 transition-opacity"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">database</span>
+</div>
+<h3 class="text-headline-md font-headline-md mb-4 text-tertiary">Data / BI</h3>
+<ul class="flex flex-col gap-stack-sm text-body-md font-body-md text-on-surface-variant flex-grow">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Logs API
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Data Stream
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> DWH
+                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Data quality
+                    </li>
+</ul>
+<div class="mt-8 pt-6 border-t border-outline-variant">
+<p class="text-label-md font-label-md uppercase tracking-wider text-outline">Data-контур</p>
+<p class="text-body-md font-body-md mt-1">Экспорт и отчетность</p>
+</div>
+</div>
+</section>
+<!-- Conclusion Pill -->
+<section class="flex justify-center mt-stack-lg">
+<div class="bg-surface-container-high px-8 py-6 rounded-full border border-primary/20 flex items-center gap-4 max-w-4xl shadow-2xl">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-body-md font-body-md text-on-surface">
+                    Выбор конкурентов должен учитывать и attribution-класс, и роль AppMetrica как аналитического контура продукта
+                </p>
+</div>
+</section>
+<!-- Decorative Background Element -->
+<div class="fixed top-1/4 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<div class="fixed bottom-1/4 -left-24 w-96 h-96 bg-tertiary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+</main>
+
+<script>
+        // Subtle entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bento-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body></html>

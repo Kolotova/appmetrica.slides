@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Инициативы на 90 дней | AppMetrica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1d1f26",
+                    "surface-container-low": "#191b22",
+                    "on-tertiary": "#3c0091",
+                    "background": "#11131a",
+                    "on-error": "#690005",
+                    "tertiary-container": "#a078ff",
+                    "surface-bright": "#373940",
+                    "on-tertiary-container": "#340080",
+                    "on-tertiary-fixed-variant": "#5600ca",
+                    "tertiary-fixed-dim": "#d0bcff",
+                    "on-surface-variant": "#c2c6d5",
+                    "on-primary-container": "#00275f",
+                    "inverse-on-surface": "#2e3037",
+                    "secondary-container": "#c2006a",
+                    "primary-fixed-dim": "#afc6ff",
+                    "tertiary-fixed": "#e9ddff",
+                    "surface-container-highest": "#32353c",
+                    "surface-container-lowest": "#0c0e14",
+                    "secondary-fixed-dim": "#ffb0c9",
+                    "on-primary-fixed-variant": "#004398",
+                    "surface-variant": "#32353c",
+                    "surface-dim": "#11131a",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#8e004c",
+                    "inverse-primary": "#0059c6",
+                    "inverse-surface": "#e1e2eb",
+                    "surface-tint": "#afc6ff",
+                    "on-surface": "#e1e2eb",
+                    "error-container": "#93000a",
+                    "primary-container": "#538dfd",
+                    "secondary": "#ffb0c9",
+                    "outline": "#8c909f",
+                    "primary-fixed": "#d9e2ff",
+                    "on-background": "#e1e2eb",
+                    "on-primary-fixed": "#001a43",
+                    "secondary-fixed": "#ffd9e3",
+                    "on-tertiary-fixed": "#23005c",
+                    "surface": "#11131a",
+                    "tertiary": "#d0bcff",
+                    "on-error-container": "#ffdad6",
+                    "on-primary": "#002d6c",
+                    "surface-container-high": "#272a31",
+                    "on-secondary-container": "#ffd6e0",
+                    "outline-variant": "#424753",
+                    "primary": "#afc6ff",
+                    "on-secondary": "#650034",
+                    "on-secondary-fixed": "#3e001e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "64px",
+                    "container-max": "1440px",
+                    "stack-xl": "64px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "number-lg": ["Inter"],
+                    "display-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #11131a;
+            color: #e1e2eb;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: #191e28;
+            border: 1px solid #303849;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #4D88F7;
+            transform: translateY(-4px);
+            background: #202635;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .accent-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4D88F7, #a078ff);
+        }
+    </style>
+<style id="slide-14-align">
+.glass-card{min-height:430px}.glass-card .space-y-6>div:first-child{min-height:116px}.glass-card .space-y-6>div:nth-child(2){min-height:78px}
+</style>
+<style id="deck-eyebrow-style">
+.deck-eyebrow{display:inline-flex;align-items:center;width:max-content;padding:4px 16px;border-radius:9999px;background:rgba(83,141,253,.10);border:1px solid rgba(83,141,253,.20);color:#afc6ff;font-family:Inter,sans-serif;font-size:14px;line-height:20px;font-weight:500;letter-spacing:0;text-transform:none;margin-bottom:16px}
+</style>
+<style id="slide-14-copy-align">
+.glass-card{min-height:548px}.glass-card .space-y-6{display:grid;grid-template-rows:210px 88px 122px;gap:24px}.glass-card .space-y-6>div{min-height:0!important}.glass-card h3{min-height:40px}.glass-card [class*=tracking]{letter-spacing:0!important}.glass-card p{line-height:1.38}.glass-card .text-body-md{font-size:16px;line-height:23px}
+</style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-extrabold text-on-surface dark:text-on-surface">
+                AppMetrica
+            </div>
+
+<div class="flex gap-stack-md">
+
+
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-stack-xl">
+<!-- Header Section -->
+<div class="mb-stack-xl">
+<span class="deck-eyebrow">План роста A2V30</span>
+<h1 class="text-display-lg font-display-lg text-on-surface max-w-3xl">
+                Первые инициативы ускоряют путь до результата
+            </h1>
+</div>
+<!-- Bento Grid Initiatives -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card rounded-[32px] p-10 relative overflow-hidden flex flex-col group">
+<div class="accent-glow opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8">
+<div class="w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[32px]">speed</span>
+</div>
+<span class="text-primary font-number-lg text-number-lg">01</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6">AppMetrica за 7 дней</h3>
+<div class="space-y-6 flex-grow">
+<div>
+<p class="text-primary font-label-md text-label-md uppercase tracking-wider mb-2">Механика</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Серия отраслевых лендингов, чек-лист запуска, SDK-гайд, email-серия, шаблоны событий и персональные маршруты для growth/performance/BI.</p>
+</div>
+<div>
+<p class="text-primary font-label-md text-label-md uppercase tracking-wider mb-2">KPI</p>
+<p class="text-on-surface-variant font-body-md text-body-md">SDK integration rate, first event rate, first report rate.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<p class="text-on-surface font-label-md text-label-md mb-1">Ожидание</p>
+<p class="text-on-surface-variant font-body-md text-body-md">+8–12 п.п. к A2V30 в сегменте A; сильнее эффект в отраслях с готовыми сценариями.</p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card rounded-[32px] p-10 relative overflow-hidden flex flex-col group">
+<div class="accent-glow opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8">
+<div class="w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[32px]">payments</span>
+</div>
+<span class="text-tertiary font-number-lg text-number-lg">02</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6">ROAS playbook</h3>
+<div class="space-y-6 flex-grow">
+<div>
+<p class="text-tertiary font-label-md text-label-md uppercase tracking-wider mb-2">Механика</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Гайды для performance-команд: как связать рекламные расходы, установки, ключевые события и выручку в ROAS-отчете для игр, e-commerce и подписок; вебинар, ивент и разбор вопросов.</p>
+</div>
+<div>
+<p class="text-tertiary font-label-md text-label-md uppercase tracking-wider mb-2">KPI</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Доля настроенных событий выручки, использование ROAS-отчета.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<p class="text-on-surface font-label-md text-label-md mb-1">Ожидание</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Рост first report rate в performance-сегменте.</p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card rounded-[32px] p-10 relative overflow-hidden flex flex-col group">
+<div class="accent-glow opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8">
+<div class="w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[32px]">move_item</span>
+</div>
+<span class="text-secondary font-number-lg text-number-lg">03</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6">Migration Pack</h3>
+<div class="space-y-6 flex-grow">
+<div>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-2">Механика</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Пакет перехода с MyTracker, AppsFlyer или Adjust: краткий материал для ЛПР, консультация по пилоту, материалы для продаж и персональный разбор текущей схемы аналитики.</p>
+</div>
+<div>
+<p class="text-secondary font-label-md text-label-md uppercase tracking-wider mb-2">KPI</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Конверсия демо → пилот, pilot-to-value, win rate.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<p class="text-on-surface font-label-md text-label-md mb-1">Ожидание</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Выше конверсия пилотов в активное использование и меньше барьеров на миграции.</p>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card rounded-[32px] p-10 relative overflow-hidden flex flex-col group">
+<div class="accent-glow opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8">
+<div class="w-14 h-14 bg-surface-container-high rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[32px]">database</span>
+</div>
+<span class="text-primary-container font-number-lg text-number-lg">04</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6">BI Trust Pack</h3>
+<div class="space-y-6 flex-grow">
+<div>
+<p class="text-primary-container font-label-md text-label-md uppercase tracking-wider mb-2">Механика</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Пакет доверия для enterprise/BI: схема передачи сырых данных в DWH, шаблон управления событиями, встреча с ЛПР и технический воркшоп для аналитиков.</p>
+</div>
+<div>
+<p class="text-primary-container font-label-md text-label-md uppercase tracking-wider mb-2">KPI</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Подключение выгрузок, запуск BI-сценария, enterprise pilot-to-value.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant">
+<p class="text-on-surface font-label-md text-label-md mb-1">Ожидание</p>
+<p class="text-on-surface-variant font-body-md text-body-md">Рост активации в enterprise-сегменте за счет доверия к данным и понятного внедрения.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Marketing Channels Strip -->
+<section class="mt-stack-xl">
+<div class="bg-surface-container-low border border-outline-variant rounded-2xl px-10 py-6 flex flex-wrap items-center gap-gutter">
+<div class="flex items-center gap-3 mr-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<p class="text-on-surface font-label-md text-label-md">Каналы коммуникации</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">отраслевые лендинги</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">цепочки писем</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">подсказки в кабинете</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">вебинары/ивенты</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">Telegram/комьюнити</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">платный трафик</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-label-md font-label-md text-on-surface-variant border border-outline-variant">материалы для продаж</span>
+</div>
+</section>
+</main>
+
+<script>
+        // Subtle ambient effect for the background
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            document.body.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, rgba(77, 136, 247, 0.05) 0%, transparent 50%)`;
+        });
+    </script>
+</body></html>

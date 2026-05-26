@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#ffd6e0",
+                        "tertiary-container": "#a078ff",
+                        "surface-bright": "#373940",
+                        "surface-variant": "#32353c",
+                        "surface": "#11131a",
+                        "primary-container": "#538dfd",
+                        "on-secondary-fixed": "#3e001e",
+                        "inverse-primary": "#0059c6",
+                        "surface-container-highest": "#32353c",
+                        "on-tertiary-fixed": "#23005c",
+                        "surface-dim": "#11131a",
+                        "surface-container-lowest": "#0c0e14",
+                        "on-error": "#690005",
+                        "secondary": "#ffb0c9",
+                        "on-primary-fixed": "#001a43",
+                        "inverse-surface": "#e1e2eb",
+                        "background": "#11131a",
+                        "primary": "#afc6ff",
+                        "inverse-on-surface": "#2e3037",
+                        "on-primary": "#002d6c",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c2c6d5",
+                        "on-tertiary-fixed-variant": "#5600ca",
+                        "outline": "#8c909f",
+                        "surface-container-high": "#272a31",
+                        "tertiary-fixed": "#e9ddff",
+                        "surface-container": "#1d1f26",
+                        "on-primary-fixed-variant": "#004398",
+                        "on-surface": "#e1e2eb",
+                        "surface-container-low": "#191b22",
+                        "tertiary-fixed-dim": "#d0bcff",
+                        "on-secondary": "#650034",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e1e2eb",
+                        "tertiary": "#d0bcff",
+                        "primary-fixed": "#d9e2ff",
+                        "on-primary-container": "#00275f",
+                        "secondary-fixed-dim": "#ffb0c9",
+                        "outline-variant": "#424753",
+                        "secondary-container": "#c2006a",
+                        "on-tertiary-container": "#340080",
+                        "secondary-fixed": "#ffd9e3",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-secondary-fixed-variant": "#8e004c",
+                        "surface-tint": "#afc6ff",
+                        "on-tertiary": "#3c0091"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px",
+                        "stack-xl": "64px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "number-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "number-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #0E121A; color: #e1e2eb; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .glass-card { 
+            background: #191E28; 
+            border: 1px solid #303849; 
+            border-radius: 32px; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { 
+            border-color: #4D88F7; 
+            background: #202635;
+            transform: translateY(-4px);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #538dfd 0%, #a078ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style id="telegram-cleanup-style">
+body{background:#11131a!important;color:#e1e2eb!important;font-family:Inter,Arial,sans-serif!important}
+header,body>nav,footer{display:none!important}
+main{padding-top:64px!important}
+.deck-eyebrow{display:inline-flex!important;align-items:center!important;width:max-content!important;padding:4px 16px!important;border-radius:9999px!important;background:rgba(83,141,253,.10)!important;border:1px solid rgba(83,141,253,.20)!important;color:#afc6ff!important;font-family:Inter,sans-serif!important;font-size:14px!important;line-height:20px!important;font-weight:500!important;letter-spacing:0!important;text-transform:none!important;margin-bottom:16px!important}
+[class*="tracking"]{letter-spacing:0!important}
+.no-ai-garbage{display:none!important}
+</style>
+<style id="slide19-row-layout-fix">
+main{padding-top:48px!important;padding-bottom:48px!important}
+.channel-rows{display:grid!important;gap:14px!important;margin-bottom:28px!important}
+.channel-row{min-height:76px!important;background:#191E28!important;border:1px solid #303849!important;border-radius:32px!important;padding:18px 28px!important;display:grid!important;grid-template-columns:260px 360px 1fr!important;gap:22px!important;align-items:center!important;transition:border-color .2s ease,transform .2s ease!important;overflow:hidden!important}
+.channel-row:hover{border-color:#538dfd!important;transform:translateX(6px)!important}
+.channel-row.accent-pink{border-left:4px solid #ffb0c9!important}
+.channel-row.accent-blue{border-left:4px solid #538dfd!important}
+.channel-row.accent-purple{border-left:4px solid #a078ff!important}
+.channel-label{font-size:14px!important;line-height:19px!important;font-weight:800!important;letter-spacing:0!important;color:#afc6ff!important;white-space:normal!important}
+.channel-label.pink{color:#ffb0c9!important}.channel-label.purple{color:#d0bcff!important}.channel-label.muted{color:#9aa2b6!important}
+.channel-title{font-size:22px!important;line-height:27px!important;font-weight:800!important;letter-spacing:0!important;color:#e1e2eb!important;margin:0!important;white-space:normal!important;overflow-wrap:break-word!important}
+.channel-copy{font-size:16px!important;line-height:23px!important;font-weight:500!important;color:#c2c6d5!important;margin:0!important;white-space:normal!important;overflow-wrap:break-word!important}
+.channel-bottom{background:#191E28!important;border:1px solid #303849!important;border-radius:32px!important;padding:24px 36px!important;display:flex!important;align-items:center!important;gap:22px!important;overflow:hidden!important}
+.channel-bottom .material-symbols-outlined{font-size:34px!important;color:#afc6ff!important;background:rgba(83,141,253,.14)!important;border-radius:18px!important;padding:12px!important}
+.channel-bottom p{font-size:22px!important;line-height:28px!important;font-weight:800!important;color:#e1e2eb!important;margin:0!important}
+@media(max-width:1100px){.channel-row{grid-template-columns:1fr!important;gap:12px!important}.channel-title{font-size:23px!important}.channel-copy{font-size:17px!important}.channel-bottom{align-items:flex-start!important;flex-direction:column!important}}
+</style></head>
+<body class="flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-stack-xl">
+<section class="mb-stack-lg">
+<h1 class="font-display-xl text-display-xl text-on-surface mb-stack-md">Рост строим через <span class="accent-gradient">owned-каналы</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Используем точки контакта, где у Директа уже есть связь с пользователем.</p>
+</section>
+<section class="channel-rows">
+<div class="channel-row accent-blue"><div class="channel-label">CRM-коммуникации</div><h3 class="channel-title">Email, дайджесты, триггерные письма</h3><p class="channel-copy">Доводят до настройки и повторяют ценность без платного трафика.</p></div>
+<div class="channel-row accent-pink"><div class="channel-label pink">Кабинет Директа</div><h3 class="channel-title">Новости, инфоблоки, обучающие места</h3><p class="channel-copy">Ловим пользователя в момент работы с рекламой.</p></div>
+<div class="channel-row accent-purple"><div class="channel-label purple">Owned-сообщества</div><h3 class="channel-title">Посты и карточки в собственных каналах</h3><p class="channel-copy">Расширяем знание о настройке через существующую аудиторию.</p></div>
+<div class="channel-row accent-blue"><div class="channel-label">Обучение</div><h3 class="channel-title">Гайд, статья, короткое видео, FAQ</h3><p class="channel-copy">Объясняем, какие уведомления придут и зачем их подключать.</p></div>
+<div class="channel-row accent-pink"><div class="channel-label pink">Поддержка и менеджеры</div><h3 class="channel-title">Скрипты, чек-лист, консультации</h3><p class="channel-copy">Добавляем рекомендацию в живой контакт с клиентом.</p></div>
+<div class="channel-row accent-purple"><div class="channel-label muted">Агентства и партнеры</div><h3 class="channel-title">Дайджест, one-pager, чек-лист</h3><p class="channel-copy">Масштабируем подключение на несколько клиентов.</p></div>
+</section>
+<div class="channel-bottom">
+<span class="material-symbols-outlined">send</span>
+<p>Канал бесплатный, но сообщение должно быть сегментным.</p>
+</div>
+</main>
+<!-- Footer -->
+<script>
+        // Micro-interaction for cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+        });
+    </script>
+</body></html>
